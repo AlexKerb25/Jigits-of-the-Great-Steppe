@@ -30,8 +30,10 @@ func _process(delta):
 			b = ""
 	if movvector.length_squared() == 0:
 		$AnimatedSprite.play(b+"IDLE")
+		$Particles2D.emitting = false
 	else:
 		$AnimatedSprite.play(b+"MOVE")
+		$Particles2D.emitting = true
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
