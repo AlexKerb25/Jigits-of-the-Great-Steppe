@@ -11,16 +11,17 @@ var back = false
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
 	var movvector = Vector2(0,0)
-	if Input.is_action_pressed("ui_down"):
-		movvector.y = 1
-		back = false
-	elif Input.is_action_pressed("ui_up"):
-		movvector.y = -1
-		back = true
-	if Input.is_action_pressed("ui_left"):
-		movvector.x= -1
-	elif Input.is_action_pressed("ui_right"):
-		movvector.x = 1
+	if get_tree().get_nodes_in_group("BLOCKER").size() == 0:
+		if Input.is_action_pressed("ui_down"):
+			movvector.y = 1
+			back = false
+		elif Input.is_action_pressed("ui_up"):
+			movvector.y = -1
+			back = true
+		if Input.is_action_pressed("ui_left"):
+			movvector.x= -1
+		elif Input.is_action_pressed("ui_right"):
+			movvector.x = 1
 	move_and_slide(movvector.normalized()*movespeed)
 	var b 
 	match back:
