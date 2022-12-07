@@ -87,7 +87,7 @@ need_dialogue = true
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
 animation = "BERKEATA_IDLE"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, -15 )
 
@@ -99,7 +99,7 @@ shape = SubResource( 2 )
 position = Vector2( 0, -152 )
 scale = Vector2( 2.5, 2.16667 )
 frames = SubResource( 6 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="Interaction" type="Area2D" parent="."]
