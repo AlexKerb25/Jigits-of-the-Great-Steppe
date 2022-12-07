@@ -4,7 +4,7 @@ extends Control
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var goto = "Settings"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,10 +22,25 @@ func _on_Button3_pressed():
 
 
 func _on_Button2_pressed():
-	get_tree().change_scene("res://Settings.tscn")
+	goto = "Settings"
+	$Transition/AnimationPlayer.play("2")
 	pass # Replace with function body.
 
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://World.tscn")
+	$Transition.modulate = Color(0, 0, 0)
+	goto = "World"
+	$Transition/AnimationPlayer.play("2")
+	pass # Replace with function body.
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "2":
+		match goto:
+			"Settings":
+				yield(get_tree().create_timer(0.5),"timeout")
+				get_tree().change_scene("res://Settings.tscn")
+			"World":
+				yield(get_tree().create_timer(0.5),"timeout")
+				get_tree().change_scene("res://World.tscn")
 	pass # Replace with function body.

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dzungar4.png-f76ee33df92aed0bf1251ffbb457af99.stex"
+path="res://.import/Dana10.png-7bec9405ee5aad982ed49db3e16b7b0c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Concepts/Dzungars/Dzungar4.png"
-dest_files=[ "res://.import/Dzungar4.png-f76ee33df92aed0bf1251ffbb457af99.stex" ]
+source_file="res://Sprites/Concepts/DANA_IDLE/Dana10.png"
+dest_files=[ "res://.import/Dana10.png-7bec9405ee5aad982ed49db3e16b7b0c.stex" ]
 
 [params]
 
@@ -20,11 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-<<<<<<< HEAD
 flags/filter=false
-=======
-flags/filter=true
->>>>>>> 27d48fb6029d70c3d0de2ebf3352d1f2737566b9
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
