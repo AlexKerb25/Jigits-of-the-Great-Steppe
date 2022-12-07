@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ali.png-361764233fbaf9c9afb09f3342228d77.stex"
+path="res://.import/Zul'Ar.png-448680337bbff6bc3dd1312a3e56a534.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Concepts/Ali.png"
-dest_files=[ "res://.import/Ali.png-361764233fbaf9c9afb09f3342228d77.stex" ]
+source_file="res://Sprites/Concepts/Zul'Ar.png"
+dest_files=[ "res://.import/Zul'Ar.png-448680337bbff6bc3dd1312a3e56a534.stex" ]
 
 [params]
 
