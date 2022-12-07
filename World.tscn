@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=2]
+[gd_scene load_steps=65 format=2]
 
 [ext_resource path="res://Sprites/Concepts/ASAN_IDLE/BACK/Asan2.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Concepts/ASAN_IDLE/BACK/Asan3.png" type="Texture" id=2]
@@ -262,7 +262,14 @@ font_data = ExtResource( 43 )
 size = 12
 font_data = ExtResource( 43 )
 
+[sub_resource type="DynamicFont" id=21]
+size = 12
+font_data = ExtResource( 43 )
+
 [node name="World" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 3 )
@@ -285,6 +292,7 @@ position = Vector2( 0, -1 )
 shape = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="TileMap/ASAN"]
+z_index = 10
 emitting = false
 amount = 5
 lifetime = 0.5
@@ -483,17 +491,102 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="GUI/GameMenu/Desc"]
-anchor_left = 0.444444
-anchor_top = 0.074184
-anchor_right = 0.666944
-anchor_bottom = 0.266617
+anchor_left = 0.333333
+anchor_top = 0.264095
+anchor_right = 0.944722
+anchor_bottom = 0.646439
+margin_right = -0.319946
+margin_bottom = -0.849991
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label2" type="Label" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.333333
+anchor_top = 0.0504451
+anchor_right = 0.944722
+anchor_bottom = 0.219139
 margin_right = -0.32
 margin_bottom = -0.85
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.864583
+anchor_top = 0.691395
+anchor_right = 0.934305
+anchor_bottom = 0.929089
+margin_right = -0.32
+margin_bottom = -0.103001
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label3" type="Label" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.0208333
+anchor_top = 0.833828
+anchor_right = 0.305833
+anchor_bottom = 0.943175
+margin_right = -0.32
+margin_bottom = -0.85
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label4" type="Label" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.822917
+anchor_top = 0.632047
+anchor_right = 0.969028
+anchor_bottom = 0.682047
+margin_right = -0.32
+margin_bottom = -0.85
+custom_fonts/font = SubResource( 21 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label5" type="Label" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.349826
+anchor_top = 0.667656
+anchor_right = 0.461215
+anchor_bottom = 0.931306
+margin_right = -0.32
+margin_bottom = -0.85
+custom_fonts/font = SubResource( 21 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label6" type="Label" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.664063
+anchor_top = 0.667656
+anchor_right = 0.775451
+anchor_bottom = 0.931306
+margin_right = -0.32
+margin_bottom = -0.85
+custom_fonts/font = SubResource( 21 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="GUI/GameMenu/Button2" to="GUI/GameMenu" method="_on_Button2_pressed"]
 [connection signal="gui_input" from="GUI/GameMenu/Squad/Member" to="GUI/GameMenu/Squad/Member" method="_on_Member_gui_input"]
 [connection signal="mouse_entered" from="GUI/GameMenu/Squad/Member" to="GUI/GameMenu/Squad/Member" method="_on_Member_mouse_entered"]
 [connection signal="mouse_exited" from="GUI/GameMenu/Squad/Member" to="GUI/GameMenu/Squad/Member" method="_on_Member_mouse_exited"]
