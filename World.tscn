@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://Sprites/Concepts/ASAN_IDLE/BACK/Asan2.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Concepts/ASAN_IDLE/BACK/Asan3.png" type="Texture" id=2]
@@ -39,6 +39,10 @@
 [ext_resource path="res://Interaction.gd" type="Script" id=37]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
+[ext_resource path="res://GameMenu.gd" type="Script" id=40]
+[ext_resource path="res://Member.gd" type="Script" id=41]
+[ext_resource path="res://Sprites/Concepts/Asan.png" type="Texture" id=42]
+[ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=43]
 
 [sub_resource type="TileSet" id=3]
 0/name = "1.png 0"
@@ -146,6 +150,118 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 0.741176 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0.596078 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 0.0980392 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0.596078 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 1 )
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.215686, 0.215686, 0.215686, 0.705882 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="Theme" id=16]
+Button/styles/hover = SubResource( 12 )
+Button/styles/normal = SubResource( 13 )
+Button/styles/pressed = SubResource( 5 )
+CheckBox/styles/focus = SubResource( 14 )
+CheckBox/styles/hover = SubResource( 6 )
+CheckBox/styles/hover_pressed = SubResource( 6 )
+CheckBox/styles/normal = SubResource( 6 )
+CheckBox/styles/pressed = SubResource( 6 )
+OptionButton/styles/focus = SubResource( 15 )
+OptionButton/styles/hover = SubResource( 6 )
+OptionButton/styles/normal = SubResource( 6 )
+OptionButton/styles/pressed = SubResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0, 0, 0, 0.376471 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.52549, 0.384314, 0, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_size = 10
+shadow_offset = Vector2( 0, 8 )
+
+[sub_resource type="Theme" id=18]
+Button/styles/hover = SubResource( 12 )
+Button/styles/normal = SubResource( 13 )
+Button/styles/pressed = SubResource( 5 )
+CheckBox/styles/focus = SubResource( 14 )
+CheckBox/styles/hover = SubResource( 6 )
+CheckBox/styles/hover_pressed = SubResource( 6 )
+CheckBox/styles/normal = SubResource( 6 )
+CheckBox/styles/pressed = SubResource( 6 )
+OptionButton/styles/focus = SubResource( 15 )
+OptionButton/styles/hover = SubResource( 6 )
+OptionButton/styles/normal = SubResource( 6 )
+OptionButton/styles/pressed = SubResource( 6 )
+Panel/styles/panel = SubResource( 17 )
+
+[sub_resource type="DynamicFont" id=19]
+size = 8
+font_data = ExtResource( 43 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 12
+font_data = ExtResource( 43 )
+
 [node name="World" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -213,4 +329,171 @@ __meta__ = {
 anims/1 = SubResource( 10 )
 anims/RESET = SubResource( 11 )
 
+[node name="GameMenu" type="Control" parent="GUI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -6.10352e-05
+theme = SubResource( 16 )
+script = ExtResource( 40 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="ColorRect" type="ColorRect" parent="GUI/GameMenu"]
+anchor_right = 0.99975
+anchor_bottom = 1.00044
+margin_right = 0.32
+margin_bottom = -0.32
+color = Color( 0, 0, 0, 0.768627 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="GUI/GameMenu"]
+anchor_left = 0.0125
+anchor_top = 0.0222222
+anchor_right = 0.2495
+anchor_bottom = 0.132889
+margin_right = 0.639999
+margin_bottom = 0.32
+text = "TRMENUMYSQUAD"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button2" type="Button" parent="GUI/GameMenu"]
+anchor_left = 0.73125
+anchor_top = 0.0222222
+anchor_right = 0.96825
+anchor_bottom = 0.132889
+margin_right = 0.639999
+margin_bottom = 0.32
+text = "TRMENUTOMAIN"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Squad" type="HBoxContainer" parent="GUI/GameMenu"]
+anchor_left = 0.05
+anchor_top = 0.177778
+anchor_right = 0.94975
+anchor_bottom = 0.444889
+margin_right = 0.32
+margin_bottom = -0.32
+custom_constants/separation = 75
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Member" type="Panel" parent="GUI/GameMenu/Squad"]
+margin_left = 480.0
+margin_right = 672.0
+margin_bottom = 192.0
+rect_min_size = Vector2( 192, 192 )
+rect_pivot_offset = Vector2( 96, 160 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+theme = SubResource( 18 )
+script = ExtResource( 41 )
+
+[node name="TextureRect" type="TextureRect" parent="GUI/GameMenu/Squad/Member"]
+anchor_left = 0.208
+anchor_top = 0.208
+anchor_right = 0.792
+anchor_bottom = 0.792
+margin_left = 0.0639992
+margin_top = 0.0639992
+margin_right = -0.0640106
+margin_bottom = -0.0640106
+texture = ExtResource( 42 )
+expand = true
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="GUI/GameMenu/Squad/Member"]
+anchor_left = 0.083
+anchor_top = 0.042
+anchor_right = 0.917
+anchor_bottom = 0.125
+margin_left = 0.0639992
+margin_top = -0.0640011
+margin_right = -0.0640106
+text = "sdsd"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="GUI/GameMenu/Squad/Member"]
+anchor_left = 0.083
+anchor_top = 0.125
+anchor_right = 0.917
+anchor_bottom = 0.208
+margin_left = 0.0639992
+margin_right = -0.0640106
+margin_bottom = 0.0639992
+custom_fonts/font = SubResource( 19 )
+text = "sdsd"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="GUI/GameMenu/Squad/Member"]
+anchor_left = 0.083
+anchor_top = 0.792
+anchor_right = 0.917
+anchor_bottom = 0.958
+margin_left = 0.0639992
+margin_top = -0.0640106
+margin_right = -0.0640106
+margin_bottom = 0.0639954
+custom_fonts/font = SubResource( 20 )
+text = "sdsd"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Desc" type="Panel" parent="GUI/GameMenu"]
+anchor_left = 0.0505
+anchor_top = 0.498278
+anchor_right = 0.9495
+anchor_bottom = 0.966667
+margin_left = -0.639999
+margin_top = 0.240005
+margin_right = 0.639984
+margin_bottom = 3.05176e-05
+rect_min_size = Vector2( 192, 192 )
+rect_pivot_offset = Vector2( 96, 160 )
+size_flags_horizontal = 9
+size_flags_vertical = 9
+theme = SubResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.0277778
+anchor_top = 0.169139
+anchor_right = 0.291944
+anchor_bottom = 0.834134
+margin_right = -0.32
+margin_bottom = -0.103001
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label" type="Label" parent="GUI/GameMenu/Desc"]
+anchor_left = 0.444444
+anchor_top = 0.074184
+anchor_right = 0.666944
+anchor_bottom = 0.266617
+margin_right = -0.32
+margin_bottom = -0.85
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="gui_input" from="GUI/GameMenu/Squad/Member" to="GUI/GameMenu/Squad/Member" method="_on_Member_gui_input"]
+[connection signal="mouse_entered" from="GUI/GameMenu/Squad/Member" to="GUI/GameMenu/Squad/Member" method="_on_Member_mouse_entered"]
+[connection signal="mouse_exited" from="GUI/GameMenu/Squad/Member" to="GUI/GameMenu/Squad/Member" method="_on_Member_mouse_exited"]

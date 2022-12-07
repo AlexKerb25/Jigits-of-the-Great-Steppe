@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://NPC1.gd" type="Script" id=1]
 [ext_resource path="res://DialogueHitbox.gd" type="Script" id=2]
@@ -50,6 +50,19 @@
 [ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta1.png" type="Texture" id=48]
 [ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta8.png" type="Texture" id=49]
 [ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta9.png" type="Texture" id=50]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana6.png" type="Texture" id=51]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana4.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana8.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana10.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana11.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana3.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana12.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana13.png" type="Texture" id=58]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana9.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana5.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana2.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana1.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana7.png" type="Texture" id=63]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -62,6 +75,11 @@ animations = [ {
 "loop": true,
 "name": "BERKEATA_IDLE",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 62 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 52 ), ExtResource( 60 ), ExtResource( 51 ), ExtResource( 63 ), ExtResource( 53 ), ExtResource( 59 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "DANA_IDLE",
+"speed": 7.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -98,7 +116,7 @@ shape = SubResource( 2 )
 position = Vector2( 0, -152 )
 scale = Vector2( 2.5, 2.16667 )
 frames = SubResource( 6 )
-frame = 8
+frame = 3
 playing = true
 
 [node name="Interaction" type="Area2D" parent="."]
