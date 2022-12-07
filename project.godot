@@ -16,6 +16,12 @@ config/icon="res://icon.png"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom_font="res://fonts/font1.tres"
+
+[locale]
+
+locale_filter=[ 0, [ "en", "ru" ] ]
+translations=PoolStringArray( "res://locales/locales.en.translation", "res://locales/locales.ru.translation" )
 
 [physics]
 
