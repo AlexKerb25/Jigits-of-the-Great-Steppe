@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Asan2.png-d4b20863568ae49ad97dd57fb4fed5ed.stex"
+path="res://.import/Dana.png-93c64986805330d670f2e3eefe7481b7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Concepts/Asan2.png"
-dest_files=[ "res://.import/Asan2.png-d4b20863568ae49ad97dd57fb4fed5ed.stex" ]
+source_file="res://Sprites/Concepts/Dana.png"
+dest_files=[ "res://.import/Dana.png-93c64986805330d670f2e3eefe7481b7.stex" ]
 
 [params]
 
