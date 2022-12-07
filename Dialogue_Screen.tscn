@@ -156,7 +156,7 @@ OptionButton/styles/hover = SubResource( 6 )
 OptionButton/styles/normal = SubResource( 6 )
 OptionButton/styles/pressed = SubResource( 6 )
 
-[node name="Dialogue_Screen" type="Control"]
+[node name="Dialogue_Screen" type="Control" groups=["BLOCKER"]]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 16, 440 )
@@ -168,7 +168,7 @@ anchor_right = 0.99975
 anchor_bottom = 1.00044
 margin_right = 0.32
 margin_bottom = -0.32
-color = Color( 0, 0, 0, 0.219608 )
+color = Color( 0, 0, 0, 0.490196 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
