@@ -33,7 +33,7 @@ onready var dialogues = {"ALI1":
 			]
 		},
 	"2":
-		{"Text":tr("TRTRBERKEATAD1_2"), 
+		{"Text":tr("TRBERKEATAD1_2"), 
 		"Answers":[
 			[tr("TRENDCONVERSATION"),["END"]]
 			]
