@@ -39,6 +39,23 @@ onready var dialogues = {"ALI1":
 			]
 		}
 
+		},
+		
+"DANA1":
+	{"1":
+		{"Text":tr("TRDANAD1_1"), 
+		"Answers":[
+			[tr("TRDANAD1_1A1"),["GOTO_2"]],
+			[tr("TRDANAD1_1A2"),["END"]]
+			]
+		},
+	"2":
+		{"Text":tr("TRDANAD1_2"), 
+		"Answers":[
+			[tr("TRENDCONVERSATION"),["END"]]
+			]
+		}
+
 		}
 		
 		

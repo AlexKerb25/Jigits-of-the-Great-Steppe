@@ -94,7 +94,7 @@ scale = 6.0
 color = Color( 0.615686, 0.721569, 0, 1 )
 
 [sub_resource type="CircleShape2D" id=7]
-radius = 212.229
+radius = 16.0
 
 [sub_resource type="Shader" id=8]
 code = "shader_type canvas_item;
@@ -187,8 +187,13 @@ shape = SubResource( 7 )
 character = "ALI"
 
 [node name="NPC2" parent="TileMap" instance=ExtResource( 38 )]
-position = Vector2( 744, 300 )
+position = Vector2( 1056, 360 )
 dialogue = "BERKEATA1"
+
+[node name="NPC3" parent="TileMap" instance=ExtResource( 38 )]
+position = Vector2( 744, 560 )
+character = "DANA"
+dialogue = "DANA1"
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -197,8 +202,8 @@ modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 9 )
 anchor_right = 0.99975
 anchor_bottom = 1.00044
-margin_right = 0.32
-margin_bottom = -0.32
+margin_right = 0.319946
+margin_bottom = -0.320007
 script = ExtResource( 39 )
 __meta__ = {
 "_edit_use_anchors_": true
