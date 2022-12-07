@@ -4,7 +4,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-export var character = "ALI"
+export var character = "BERKEATA"
 export var dialogue = "ALI1"
 export var need_dialogue = false
 
@@ -22,7 +22,7 @@ func _process(delta):
 		$AnimatedSprite2.visible = true
 	else:
 		$AnimatedSprite2.visible = false
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and get_tree().get_nodes_in_group("BLOCKER").size() == 0:
 		if need_dialogue and p:
 			need_dialogue = false
 			var d = ds.instance()

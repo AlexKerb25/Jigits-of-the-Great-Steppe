@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://NPC1.gd" type="Script" id=1]
 [ext_resource path="res://DialogueHitbox.gd" type="Script" id=2]
@@ -39,6 +39,17 @@
 [ext_resource path="res://Sprites/Dialogue/Noticement/3.png" type="Texture" id=37]
 [ext_resource path="res://Sprites/Dialogue/Noticement/8.png" type="Texture" id=38]
 [ext_resource path="res://Sprites/Concepts/ALI_IDLE/Ali18.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta3.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta7.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta10.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta2.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta11.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta4.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta5.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta6.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta1.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta8.png" type="Texture" id=49]
+[ext_resource path="res://Sprites/Concepts/BERKEATA_IDLE/BerkeAta9.png" type="Texture" id=50]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -46,6 +57,11 @@ animations = [ {
 "loop": true,
 "name": "ALI_IDLE",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 43 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 41 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 42 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "BERKEATA_IDLE",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -60,7 +76,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=7]
-radius = 212.229
+radius = 120.266
 
 [node name="NPC1" type="KinematicBody2D"]
 position = Vector2( 632, 296 )
@@ -70,8 +86,8 @@ need_dialogue = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
-animation = "ALI_IDLE"
-frame = 6
+animation = "BERKEATA_IDLE"
+frame = 2
 playing = true
 offset = Vector2( 0, -15 )
 
@@ -83,14 +99,14 @@ shape = SubResource( 2 )
 position = Vector2( 0, -152 )
 scale = Vector2( 2.5, 2.16667 )
 frames = SubResource( 6 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="Interaction" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction"]
-position = Vector2( 0, -1 )
+position = Vector2( 0, -56 )
 shape = SubResource( 7 )
 
 [connection signal="area_entered" from="Interaction" to="." method="_on_Interaction_area_entered"]
