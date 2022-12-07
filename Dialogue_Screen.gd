@@ -23,7 +23,26 @@ onready var dialogues = {"ALI1":
 			]
 		}
 
-		}}
+		},
+"BERKEATA1":
+	{"1":
+		{"Text":tr("TRBERKEATAD1_1"), 
+		"Answers":[
+			[tr("TRBERKEATAD1_1A1"),["GOTO_2"]],
+			[tr("TRBERKEATAD1_1A2"),["END"]]
+			]
+		},
+	"2":
+		{"Text":tr("TRBERKEATAD1_2"), 
+		"Answers":[
+			[tr("TRENDCONVERSATION"),["END"]]
+			]
+		}
+
+		}
+		
+		
+		}
 		
 var dialogue = "ALI1"
 var line

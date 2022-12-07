@@ -133,5 +133,10 @@ position = Vector2( 1686, -347 )
 shape = SubResource( 7 )
 
 [node name="NPC1" parent="TileMap" instance=ExtResource( 38 )]
+character = "ALI"
+
+[node name="NPC2" parent="TileMap" instance=ExtResource( 38 )]
+position = Vector2( 744, 300 )
+dialogue = "BERKEATA1"
 
 [node name="GUI" type="CanvasLayer" parent="."]
