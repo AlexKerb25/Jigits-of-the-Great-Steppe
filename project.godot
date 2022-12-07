@@ -11,7 +11,15 @@ config_version=4
 [application]
 
 config/name="Jigits Of The Great Steppe"
+run/main_scene="res://Main Menu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Jigits of the Great Steppe"
 config/icon="res://icon.png"
+
+[autoload]
+
+Save="*res://Save.gd"
+Data="*res://DATA.gd"
 
 [gui]
 

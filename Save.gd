@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 
 # Declare member variables here. Examples:
@@ -10,17 +10,19 @@ extends Control
 func _ready():
 	pass # Replace with function body.
 
+func savegame():
+	var f = File.new()
+	f.open("user://save.jots",File.WRITE)
+	f.store_line(to_json(Data.settings))
+	f.close()
+	pass
 
+func loadgame():
+	var f = File.new()
+	if f.open("user://save.jots",File.READ) != OK:
+		return
+	Data.settings = parse_json(f.get_line())
+	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Button3_pressed():
-	get_tree().quit()
-	pass # Replace with function body.
-
-
-func _on_Button2_pressed():
-	get_tree().change_scene("res://Settings.tscn")
-	pass # Replace with function body.
