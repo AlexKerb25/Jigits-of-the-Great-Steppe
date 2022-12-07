@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Answer.gd" type="Script" id=1]
+
+[node name="Button" type="Button"]
+anchor_right = 0.3
+anchor_bottom = 0.089
+margin_bottom = -0.0800056
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 0, 64 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="pressed" from="." to="." method="_on_Button_pressed"]
