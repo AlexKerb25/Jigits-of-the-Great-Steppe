@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Backgroundconcept.png" type="Texture" id=1]
 [ext_resource path="res://Main Menu.gd" type="Script" id=2]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Transition.tscn" type="PackedScene" id=4]
 
 [sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.215686, 0.215686, 0.215686, 0.741176 )
@@ -84,61 +85,6 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
 
-[sub_resource type="Shader" id=9]
-code = "/*
-	ギザギザトランジションシェーダー by あるる（きのもと 結衣）
-	Saw Transition Shader by KINOMOTO Yui
-
-	MIT License
-*/
-shader_type canvas_item;
-
-uniform float saw_b_shift = -0.267;
-uniform float saw_a_interval = 1.0;
-uniform float saw_b_interval = 2.0;
-uniform float saw_a_scale = 1.0;
-uniform float saw_b_scale = 0.821;
-
-uniform vec2 uv_scale = vec2( 3.0, 8.0 );
-uniform sampler2D tex : hint_albedo;
-uniform vec4 color : hint_color = vec4( 0.0, 0.0, 0.0, 1.0 );
-
-uniform float right = 0.0;
-uniform float left = -1.0;
-
-float calc_saw( float y, float interval, float scale )
-{
-	return max( ( abs( interval / 2.0 - mod( y, interval ) ) - ( interval / 2.0 - 0.5 ) ) * scale, 0.0 );
-}
-
-void fragment( )
-{
-	vec2 scaled_uv = UV * uv_scale;
-	float saw_a = calc_saw( scaled_uv.y, saw_a_interval, saw_a_scale );
-	float saw_b = calc_saw( scaled_uv.y + saw_b_shift, saw_b_interval, saw_b_scale );
-
-	vec4 texture_pixel = texture( tex, UV );
-
-	COLOR = vec4(
-		color.rgb * texture_pixel.rgb
-	,	color.a * texture_pixel.a
-		* float( scaled_uv.x < max( saw_a, saw_b ) + right )
-		* float( max( saw_a, saw_b ) + left < scaled_uv.x )
-	);
-}"
-
-[sub_resource type="ShaderMaterial" id=10]
-shader = SubResource( 9 )
-shader_param/saw_b_shift = -0.267
-shader_param/saw_a_interval = 1.0
-shader_param/saw_b_interval = 2.0
-shader_param/saw_a_scale = 1.0
-shader_param/saw_b_scale = 0.821
-shader_param/uv_scale = Vector2( 3, 8 )
-shader_param/color = Color( 0, 0, 0, 1 )
-shader_param/right = 0.0
-shader_param/left = -1.0
-
 [node name="Main Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -198,19 +144,8 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Transition" type="ColorRect" parent="."]
-material = SubResource( 10 )
-anchor_right = 0.99975
-anchor_bottom = 1.00044
-margin_right = 0.32
-margin_bottom = -0.32
-mouse_filter = 2
-color = Color( 1, 1, 1, 0 )
-__meta__ = {
-"_edit_use_anchors_": true
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Transition"]
+[node name="Transition" parent="." instance=ExtResource( 4 )]
+modulate = Color( 0, 0.345098, 0.286275, 1 )
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
