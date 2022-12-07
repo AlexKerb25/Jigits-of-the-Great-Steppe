@@ -18,6 +18,15 @@ TRENDCONVERSATION;End conversation;Закончить разговор
 TRBERKEATAD1_1;Hello, balam. This village's destiny is in your hands! Let me help you handle it!;Привет, балам. Судьба этого аула в твоих руках! Так дай же мне помочь тебе!
 TRBERKEATAD1_1A1;Your fighting experience and Spearman skills would be very useful!;Ваши боевые навыки и искусство Копейщика будут очень полезны!
 TRBERKEATAD1_1A2;You can become a burden for our squad, old man;Ты можешь стать обузой для нашего отряда, старик
+<<<<<<< HEAD
 TRBERKEATAD1_2;Get ready to the battle, son. My old spear will be as good as in old days
+=======
+TRBERKEATAD1_2;Get ready to the battle, son. My old spear will be as good as in old days;Приготовься к битве, сынок. Моё старое копьё будет таким же могучим, как и прежде!
+>>>>>>> 9485e2a7f9adc73a18544ec5d46f8ea91a2aedac
 TRDANAD1_1;Hey! Need some help, batyr?;Эй! Помощь нужна, батыр?
 TRDANAD1_1A1;I'm gonna need some help from proficient Archer!;Мне бы пригодилась помощь от точного Лучника!
+TRDANAD1_1A2;I don't need girls in my squad!;Мне не нужны девчонки в моём отряде!
+TRDANAD1_2;They are gonna bleed from my flying ambassadors of death;Они будут истекать кровью от моих летающих посланников смерти!
+TRZULARD1_1;Listen! I can heal your squad with the power of Fire;Слушай! Я могу лечить твой отряд с помощью сил огня
+TRZULARD1_1A1;My squad's health is crucial! Join me!;Здоровье моего отряда превыше всего! Присоединяйся!
+TRZULARD1_A2;I don't need help from a zealot!;Мне не нужна помощь от фанатика
