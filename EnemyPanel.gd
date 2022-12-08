@@ -23,6 +23,7 @@ func _ready():
 	$HP.value = hp
 	$TextureRect.texture = dzungaranimation[type]
 	$Line2D.global_position = Vector2(0,0)
+	$Line2D.set_as_toplevel(true)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,7 +63,7 @@ func _on_EnemyPanel_gui_input(event):
 			if attacker.member["Weapon"][1] == "MELEE":
 				attacker.member["Chars"]["HP"] -= attackpower*counterpercent
 			attacker.gonacd(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][2])
-			
+			attacker.drawline(self)
 			get_parent().get_parent().get_parent().attackingcharacter = null
 	pass # Replace with function body.
 
@@ -79,8 +80,11 @@ func _on_topas_timeout():
 	if atype == "MELEE":
 		hp -= ((target.member['Weapon'][3])+(target.member['Weapon'][4]*target.member['Chars']["Level"]))*target.member['Weapon'][5]
 	$Line2D.clear_points()
-	$Line2D.add_point($Line2D.global_position)
-	$Line2D.add_point(target.rect_global_position)
+	$Line2D.global_position = Vector2(0,0)
+	$Line2D.add_point(rect_global_position+Vector2(132,132))
+	$Line2D.add_point(target.rect_global_position+Vector2(132,132))
+	$Line2D/Tween.interpolate_property($Line2D, "modulate:a",1,0,2)
+	$Line2D/Tween.start()
 	$TextureProgress.value = 100
 	$Tween.interpolate_property($TextureProgress, "value",100, 0, cd)
 	$cooldown.wait_time = cd

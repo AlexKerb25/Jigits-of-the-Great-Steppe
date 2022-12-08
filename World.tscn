@@ -1,10 +1,11 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://ASAN.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BattleAnim.gd" type="Script" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World.tres" type="TileSet" id=5]
+[ext_resource path="res://Sprites/ANIMS/xue hua piao piao bei feng xiao xiao Type Beat (prod. Goated) Zhang Ai Qin Singing Yi Jian Mei.mp3" type="AudioStream" id=6]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
 [ext_resource path="res://GameMenu.gd" type="Script" id=40]
@@ -542,6 +543,12 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/BattleAnim"]
 anims/1 = SubResource( 24 )
 anims/RESET = SubResource( 25 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -12.236
+autoplay = true
+bus = "New Bus"
 
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="GUI/GameMenu/Button2" to="GUI/GameMenu" method="_on_Button2_pressed"]

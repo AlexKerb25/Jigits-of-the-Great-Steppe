@@ -24,6 +24,7 @@ func _on_Button3_pressed():
 func _on_Button2_pressed():
 	goto = "Settings"
 	$Transition/AnimationPlayer.play("2")
+	$Transition.mouse_filter=Control.MOUSE_FILTER_STOP
 	pass # Replace with function body.
 
 
@@ -32,6 +33,7 @@ func _on_Button_pressed():
 	goto = "World"
 	Save.loadgame()
 	$Transition/AnimationPlayer.play("2")
+	$Transition.mouse_filter=Control.MOUSE_FILTER_STOP
 	pass # Replace with function body.
 
 
