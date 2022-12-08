@@ -44,7 +44,12 @@ func _process(delta):
 			$topas.wait_time = rand_range(0.5, 3.0)
 			$topas.start()
 
-
+func gonacd(cd):
+	$topas.stop()
+	$TextureProgress.value = 100
+	$Tween.interpolate_property($TextureProgress, "value",100, 0, cd)
+	$cooldown.wait_time = cd
+	$cooldown.start()
 
 func _on_EnemyPanel_mouse_entered():
 	if get_parent().get_parent().get_parent().attackingcharacter != null:
@@ -66,6 +71,7 @@ func _on_EnemyPanel_gui_input(event):
 			var attacker = get_member_panel(get_parent().get_parent().get_parent().attackingcharacter)
 			if is_instance_valid(attacker):
 				hp -= (get_parent().get_parent().get_parent().attackingcharacter["Weapon"][3])+(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][4]*get_parent().get_parent().get_parent().attackingcharacter["Chars"]["Level"])
+				get_parent().get_parent().get_parent().dskill(self)
 				if attacker.member["Weapon"][1] == "MELEE":
 					attacker.member["Chars"]["HP"] -= attackpower*counterpercent
 				if attacker.member["Weapon"][0] == "FIREBURST":
@@ -75,7 +81,19 @@ func _on_EnemyPanel_gui_input(event):
 				attacker.gonacd(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][2])
 				attacker.drawline(self)
 				get_parent().get_parent().get_parent().attackingcharacter = null
+
 	pass # Replace with function body.
+func recieve_damage():
+	var attacker = get_member_panel(get_parent().get_parent().get_parent().attackingcharacter)
+	if is_instance_valid(attacker):
+		hp -= (get_parent().get_parent().get_parent().attackingcharacter["Weapon"][3])+(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][4]*get_parent().get_parent().get_parent().attackingcharacter["Chars"]["Level"])
+		if attacker.member["Weapon"][1] == "MELEE":
+			attacker.member["Chars"]["HP"] -= attackpower*counterpercent
+		if attacker.member["Weapon"][0] == "FIREBURST":
+			var i = burst.instance()
+			i.global_position = rect_global_position+Vector2(132,132)
+			get_parent().get_parent().get_parent().get_node("CanvasLayer2").add_child(i)
+		attacker.gonacd(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][2])
 
 func _on_topas_timeout():
 	var battle = get_parent().get_parent().get_parent()
@@ -86,7 +104,7 @@ func _on_topas_timeout():
 		return
 	players.shuffle()
 	var target = players[0] 
-	target.member['Chars']['HP'] -= attackpower
+	target.member['Chars']['HP'] -= attackpower*target.multip
 	if atype == "MELEE":
 		hp -= ((target.member['Weapon'][3])+(target.member['Weapon'][4]*target.member['Chars']["Level"]))*target.member['Weapon'][5]
 	$Line2D.clear_points()
