@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://NPC1.gd" type="Script" id=1]
 [ext_resource path="res://DialogueHitbox.gd" type="Script" id=2]
@@ -63,6 +63,19 @@
 [ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana2.png" type="Texture" id=61]
 [ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana1.png" type="Texture" id=62]
 [ext_resource path="res://Sprites/Concepts/DANA_IDLE/Dana7.png" type="Texture" id=63]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar9.png" type="Texture" id=64]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar2.png" type="Texture" id=65]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar5.png" type="Texture" id=66]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar6.png" type="Texture" id=67]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar1.png" type="Texture" id=68]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar8.png" type="Texture" id=69]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar10.png" type="Texture" id=70]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar12.png" type="Texture" id=71]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar13.png" type="Texture" id=72]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar7.png" type="Texture" id=73]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar3.png" type="Texture" id=74]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar11.png" type="Texture" id=75]
+[ext_resource path="res://Sprites/Concepts/ZULAR_IDLE/Zul'Ar4.png" type="Texture" id=76]
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
@@ -80,6 +93,11 @@ animations = [ {
 "loop": true,
 "name": "DANA_IDLE",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 68 ), ExtResource( 65 ), ExtResource( 74 ), ExtResource( 76 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 73 ), ExtResource( 69 ), ExtResource( 64 ), ExtResource( 70 ), ExtResource( 75 ), ExtResource( 71 ), ExtResource( 72 ) ],
+"loop": true,
+"name": "ZULAR_IDLE",
+"speed": 6.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -96,15 +114,17 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=7]
 radius = 120.266
 
-[node name="NPC1" type="KinematicBody2D"]
+[node name="NPC1" type="KinematicBody2D" groups=["NPC"]]
 position = Vector2( 632, 296 )
+z_index = 1
 script = ExtResource( 1 )
 need_dialogue = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
-frame = 8
+animation = "ZULAR_IDLE"
+frame = 5
 playing = true
 offset = Vector2( 0, -15 )
 
@@ -113,10 +133,11 @@ position = Vector2( 0, -1 )
 shape = SubResource( 2 )
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, -152 )
 scale = Vector2( 2.5, 2.16667 )
 frames = SubResource( 6 )
-frame = 8
+frame = 10
 playing = true
 
 [node name="Interaction" type="Area2D" parent="."]
