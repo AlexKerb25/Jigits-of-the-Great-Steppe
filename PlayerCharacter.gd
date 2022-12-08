@@ -27,15 +27,30 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if get_parent().get_parent().get_parent().attackingcharacter != null:
+		if get_parent().get_parent().get_parent().attackingcharacter != member:
+			modulate = Color(0.2, 0.2, 0.2)
+		else:
+			modulate = Color(1, 1, 1)
+	else:
+		modulate = Color(1, 1, 1)
+		
 
 
 func _on_PlayerCharacter4_mouse_entered():
-	self_modulate = Color(0.768627, 0.443137, 0.443137)
+	if get_parent().get_parent().get_parent().attackingcharacter == null:
+		self_modulate = Color(0.768627, 0.443137, 0.443137)
 	pass # Replace with function body.
 
 
 func _on_PlayerCharacter4_mouse_exited():
 	self_modulate = Color(1, 1, 1)
 	pass # Replace with function body.
+
+func _on_PlayerCharacter4_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.is_pressed() and event.button_index == 1 and get_parent().get_parent().get_parent().attackingcharacter == null:
+			get_parent().get_parent().get_parent().attackingcharacter = member
+			self_modulate = Color(1, 1, 1)
+			

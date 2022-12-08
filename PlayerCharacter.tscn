@@ -116,5 +116,6 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[connection signal="gui_input" from="." to="." method="_on_PlayerCharacter4_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_PlayerCharacter4_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_PlayerCharacter4_mouse_exited"]

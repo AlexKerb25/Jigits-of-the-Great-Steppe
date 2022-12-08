@@ -5,7 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var ms = preload("res://PlayerCharacter.tscn")
-
+var attackingcharacter
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for x in Data.party:
@@ -13,9 +13,16 @@ func _ready():
 		mi.member = x
 		$CanvasLayer/HBoxContainer.add_child(mi)
 		pass
+	
+
+	var enemyattack = false
+	
+	
+	
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel"):
+		attackingcharacter = null
