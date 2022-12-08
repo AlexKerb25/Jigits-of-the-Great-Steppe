@@ -114,7 +114,7 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=7]
 radius = 120.266
 
-[node name="NPC1" type="KinematicBody2D" groups=["NPC"]]
+[node name="NPC1" type="KinematicBody2D" groups=["NPC", "Saveobject"]]
 position = Vector2( 632, 296 )
 z_index = 1
 script = ExtResource( 1 )
@@ -124,7 +124,7 @@ need_dialogue = true
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
 animation = "ZULAR_IDLE"
-frame = 5
+frame = 9
 playing = true
 offset = Vector2( 0, -15 )
 
@@ -137,7 +137,7 @@ modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, -152 )
 scale = Vector2( 2.5, 2.16667 )
 frames = SubResource( 6 )
-frame = 10
+frame = 5
 playing = true
 
 [node name="Interaction" type="Area2D" parent="."]
