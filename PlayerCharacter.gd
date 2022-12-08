@@ -21,6 +21,8 @@ var anim_portraits = {"ALI":preload("res://Sprites/ANIMS/ALI.tres"),"ASAN":prelo
 var hover = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Line2D.set_as_toplevel(true)
+	$Line2D.global_position = Vector2(0, 0)
 	$Name.text = member["Name"] + " (" + str(member["Chars"]["Level"]) + ")"
 	$TextureRect.texture = portraits[member["Name"]]
 	$HPBAR.max_value = member["Chars"]["MaxHP"]
@@ -90,3 +92,10 @@ func gonacd(cd):
 	$Tween.interpolate_property($TextureProgress, "value", 100, 0, cd)
 	$Tween.start()
 	$Timer.start()
+
+func drawline(to):
+	$Line2D.clear_points()
+	$Line2D.add_point(rect_global_position+Vector2(132,132))
+	$Line2D.add_point(to.rect_global_position+Vector2(132,132))
+	$Line2D/Tween.interpolate_property($Line2D, "modulate:a",1,0,2)
+	$Line2D/Tween.start()

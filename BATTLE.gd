@@ -14,7 +14,7 @@ func _ready():
 		mi.member = x
 		$CanvasLayer/HBoxContainer.add_child(mi)
 		pass
-	
+	$AudioStreamPlayer.play()
 
 	
 	

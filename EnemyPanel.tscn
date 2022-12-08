@@ -31,6 +31,7 @@ anchor_bottom = 0.367
 margin_right = 0.319977
 margin_bottom = -0.240021
 rect_min_size = Vector2( 264, 264 )
+rect_pivot_offset = Vector2( 132, 132 )
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -109,8 +110,11 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Line2D" type="Line2D" parent="."]
-position = Vector2( 131, 131 )
+position = Vector2( 16, -8 )
+width = 7.0
 default_color = Color( 1, 0, 0, 1 )
+
+[node name="Tween" type="Tween" parent="Line2D"]
 
 [connection signal="gui_input" from="." to="." method="_on_EnemyPanel_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_EnemyPanel_mouse_entered"]

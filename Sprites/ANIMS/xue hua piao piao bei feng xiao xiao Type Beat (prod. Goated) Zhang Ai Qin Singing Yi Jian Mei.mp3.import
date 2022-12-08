@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/xue hua piao piao bei feng xiao xiao Type Beat (prod. Goated) Zhang Ai Qin Singing Yi Jian Mei.mp3-2134efb4a739afb23bc0ca8cf71e75ea.mp3str"
+
+[deps]
+
+source_file="res://Sprites/ANIMS/xue hua piao piao bei feng xiao xiao Type Beat (prod. Goated) Zhang Ai Qin Singing Yi Jian Mei.mp3"
+dest_files=[ "res://.import/xue hua piao piao bei feng xiao xiao Type Beat (prod. Goated) Zhang Ai Qin Singing Yi Jian Mei.mp3-2134efb4a739afb23bc0ca8cf71e75ea.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
