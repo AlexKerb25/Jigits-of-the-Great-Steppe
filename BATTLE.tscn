@@ -183,31 +183,31 @@ __meta__ = {
 [node name="EnemyPanel" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 21.0
-margin_right = 285.0
+margin_left = 20.0
+margin_right = 284.0
 margin_bottom = 264.0
 
 [node name="EnemyPanel2" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 335.0
-margin_right = 599.0
+margin_left = 334.0
+margin_right = 598.0
 margin_bottom = 264.0
 type = "dzungar2"
 
 [node name="EnemyPanel3" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 649.0
-margin_right = 913.0
+margin_left = 648.0
+margin_right = 912.0
 margin_bottom = 264.0
 type = "dzungar3"
 
 [node name="EnemyPanel4" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 963.0
-margin_right = 1227.0
+margin_left = 962.0
+margin_right = 1226.0
 margin_bottom = 264.0
 type = "dzungar4"
 

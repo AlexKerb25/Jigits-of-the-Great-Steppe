@@ -29,3 +29,13 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_PlayerCharacter4_mouse_entered():
+	self_modulate = Color(0.768627, 0.443137, 0.443137)
+	pass # Replace with function body.
+
+
+func _on_PlayerCharacter4_mouse_exited():
+	self_modulate = Color(1, 1, 1)
+	pass # Replace with function body.
