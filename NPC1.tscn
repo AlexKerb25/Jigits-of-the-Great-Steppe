@@ -137,7 +137,7 @@ modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, -152 )
 scale = Vector2( 2.5, 2.16667 )
 frames = SubResource( 6 )
-frame = 5
+frame = 8
 playing = true
 
 [node name="Interaction" type="Area2D" parent="."]

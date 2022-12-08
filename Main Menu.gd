@@ -30,6 +30,7 @@ func _on_Button2_pressed():
 func _on_Button_pressed():
 	$Transition.modulate = Color(0, 0, 0)
 	goto = "World"
+	Save.loadgame()
 	$Transition/AnimationPlayer.play("2")
 	pass # Replace with function body.
 

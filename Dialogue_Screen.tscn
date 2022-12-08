@@ -168,7 +168,7 @@ anchor_right = 0.99975
 anchor_bottom = 1.00044
 margin_right = 0.32
 margin_bottom = -0.32
-color = Color( 0, 0, 0, 0.490196 )
+color = Color( 0, 0, 0, 0.768627 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -231,6 +231,32 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 custom_constants/separation = 40
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = -0.05
+anchor_top = 0.444444
+anchor_right = 0.19975
+anchor_bottom = 0.711556
+margin_right = 0.32
+margin_bottom = -0.32
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchor_left = 0.8
+anchor_top = 0.444444
+anchor_right = 1.04975
+anchor_bottom = 0.711556
+margin_right = 0.32
+margin_bottom = -0.32
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": true
 }
