@@ -37,4 +37,5 @@ func _on_Member_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == 1:
 			get_parent().get_parent().descmember(mname)
+			
 	pass # Replace with function body.
