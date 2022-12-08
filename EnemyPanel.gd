@@ -7,11 +7,11 @@ extends Panel
 
 var hp = 100
 var maxhp = 100
-var attackpower = 30
-var cd = 15
+var attackpower = 10
+var cd = 7
 var counterpercent = 0.1
 export var type = 'dzungar1'
-
+export var atype = "MELEE"
 var dzungaranimation = {'dzungar1': preload('res://Sprites/ANIMS/Dzungar1.tres'), 'dzungar2': preload('res://Sprites/ANIMS/Dzungar2.tres'), 'dzungar3': preload('res://Sprites/ANIMS/Dzungar3.tres'), 'dzungar4': preload('res://Sprites/ANIMS/Dzungar4.tres')}
 
 
@@ -26,12 +26,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$HP2.text = str(hp)
+	$HP2.text = str(round(hp))
 	$HP.max_value = maxhp
 	$HP.value = hp
 	if hp <= 0:
 		queue_free()
 	
+	if get_parent().get_parent().get_parent().enemyattack == true:
+		if $cooldown.is_stopped() and $topas.is_stopped():
+			$topas.wait_time = rand_range(0.5, 3.0)
+			$topas.start()
 
 
 
@@ -60,3 +64,19 @@ func _on_EnemyPanel_gui_input(event):
 			
 			get_parent().get_parent().get_parent().attackingcharacter = null
 	pass # Replace with function body.
+
+func _on_topas_timeout():
+	var battle = get_parent().get_parent().get_parent()
+	var players = []
+	for x in battle.get_node('CanvasLayer/HBoxContainer').get_children():
+		players.append(x)
+	players.shuffle()
+	var target = players[0] 
+	target.member['Chars']['HP'] -= attackpower
+	if atype == "MELEE":
+		hp -= ((target.member['Weapon'][3])+(target.member['Weapon'][4]*target.member['Chars']["Level"]))*target.member['Weapon'][5]
+	$TextureProgress.value = 100
+	$Tween.interpolate_property($TextureProgress, "value",100, 0, cd)
+	$cooldown.wait_time = cd
+	$cooldown.start()
+	$Tween.start()

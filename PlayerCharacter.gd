@@ -39,8 +39,8 @@ func _process(delta):
 	$HPBAR.value = member["Chars"]["HP"]
 	$MPBAR.max_value = member["Chars"]["Spirituality"]
 	$MPBAR.value = member["Chars"]["Spirituality"]
-	$HP.text = str(member["Chars"]["HP"])
-	$MP.text = str(member["Chars"]["Spirituality"])
+	$HP.text = str(round(member["Chars"]["HP"]))
+	$MP.text = str(round(member["Chars"]["Spirituality"]))
 	if hover and get_parent().get_parent().get_parent().attackingcharacter == null and $Timer.is_stopped() == true:
 		self_modulate = Color(0.768627, 0.443137, 0.443137)
 	else:
@@ -78,6 +78,7 @@ func _on_PlayerCharacter4_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == 1 and get_parent().get_parent().get_parent().attackingcharacter == null and $Timer.is_stopped() == true:
 			get_parent().get_parent().get_parent().attackingcharacter = member
+			get_parent().get_parent().get_parent().enemyattack = true
 			self_modulate = Color(1, 1, 1)
 			
 func gonacd(cd):
