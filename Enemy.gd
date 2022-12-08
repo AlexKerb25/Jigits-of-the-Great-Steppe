@@ -7,6 +7,8 @@ extends KinematicBody2D
 export var id = 1
 export var layout = '1'
 
+export var type = "dzungar"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
