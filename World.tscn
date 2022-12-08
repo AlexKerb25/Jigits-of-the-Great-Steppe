@@ -5,6 +5,10 @@
 [ext_resource path="res://BattleAnim.gd" type="Script" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World.tres" type="TileSet" id=5]
+<<<<<<< HEAD
+=======
+[ext_resource path="res://ROCK2.tscn" type="PackedScene" id=6]
+>>>>>>> 4970458f600f15f2a2cce0e810e07d5b31252f27
 [ext_resource path="res://ROCK.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Yurta2.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Yurta.tscn" type="PackedScene" id=10]
@@ -317,14 +321,53 @@ dialogue = "ZULAR1"
 position = Vector2( 352, -16 )
 
 [node name="Yurta" parent="TileMap" instance=ExtResource( 10 )]
+<<<<<<< HEAD
 
 [node name="ROCK" parent="TileMap" instance=ExtResource( 7 )]
 
 [node name="Yurta2" parent="TileMap" instance=ExtResource( 8 )]
+=======
+position = Vector2( 2120, 448 )
+
+[node name="Yurta8" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 448, -352 )
+
+[node name="Yurta5" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( -440, 376 )
+
+[node name="Yurta6" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 467, 1416 )
+
+[node name="ROCK" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 1768, 224 )
+
+[node name="ROCK2" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 696, 973 )
+
+[node name="Yurta2" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 1256, 1056 )
+
+[node name="Yurta4" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 1808, 0 )
+
+[node name="Yurta7" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 192, 784 )
+
+[node name="Yurta3" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 1136, -352 )
+
+[node name="ROCK3" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( 808, -160 )
+
+[node name="ROCK4" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( 0, 336 )
+>>>>>>> 4970458f600f15f2a2cce0e810e07d5b31252f27
 
 [node name="GUI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Intro" type="ColorRect" parent="GUI"]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 9 )
 anchor_right = 0.99975
