@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://World.tres" type="TileSet" id=1]
+[ext_resource path="res://EnemyPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BATTLE.gd" type="Script" id=3]
 [ext_resource path="res://Intro.gd" type="Script" id=5]
 
@@ -178,6 +179,37 @@ alignment = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="EnemyPanel" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 21.0
+margin_right = 285.0
+margin_bottom = 264.0
+
+[node name="EnemyPanel2" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 335.0
+margin_right = 599.0
+margin_bottom = 264.0
+type = "dzungar2"
+
+[node name="EnemyPanel3" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 649.0
+margin_right = 913.0
+margin_bottom = 264.0
+type = "dzungar3"
+
+[node name="EnemyPanel4" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 963.0
+margin_right = 1227.0
+margin_bottom = 264.0
+type = "dzungar4"
 
 [node name="Intro" type="ColorRect" parent="CanvasLayer"]
 visible = false

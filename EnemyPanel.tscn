@@ -18,10 +18,12 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="EnemyPanel" type="Panel"]
+self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 0.206
 anchor_bottom = 0.367
 margin_right = 0.319977
 margin_bottom = -0.240021
+rect_min_size = Vector2( 264, 264 )
 script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
