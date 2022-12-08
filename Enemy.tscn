@@ -92,7 +92,7 @@ script = ExtResource( 1 )
 scale = Vector2( 4, 4 )
 frames = SubResource( 8 )
 animation = "AXE"
-frame = 3
+frame = 5
 playing = true
 offset = Vector2( 0, -15 )
 

@@ -31,7 +31,7 @@ colors = PoolColorArray( 0, 0, 0, 0.854902 )
 [sub_resource type="GradientTexture" id=24]
 gradient = SubResource( 23 )
 
-[node name="PlayerCharacter4" type="Panel"]
+[node name="PlayerCharacter4" type="Panel" groups=["PlayerPanel"]]
 margin_left = 492.0
 margin_right = 756.0
 margin_bottom = 264.0
@@ -124,6 +124,7 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
+one_shot = true
 
 [node name="TextureProgress" type="TextureProgress" parent="."]
 anchor_left = -0.00384848
@@ -134,13 +135,14 @@ margin_left = 1.016
 margin_top = 0.0879974
 margin_right = 0.887993
 margin_bottom = -0.0400085
-value = 100.0
 texture_progress = SubResource( 24 )
 fill_mode = 4
 nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Tween" type="Tween" parent="."]
 
 [connection signal="gui_input" from="." to="." method="_on_PlayerCharacter4_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_PlayerCharacter4_mouse_entered"]

@@ -124,7 +124,7 @@ need_dialogue = true
 scale = Vector2( 4, 4 )
 frames = SubResource( 5 )
 animation = "ZULAR_IDLE"
-frame = 9
+frame = 7
 playing = true
 offset = Vector2( 0, -15 )
 
@@ -137,7 +137,7 @@ modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 0, -152 )
 scale = Vector2( 2.5, 2.16667 )
 frames = SubResource( 6 )
-frame = 8
+frame = 2
 playing = true
 
 [node name="Interaction" type="Area2D" parent="."]

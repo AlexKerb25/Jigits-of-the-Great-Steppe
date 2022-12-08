@@ -19,7 +19,7 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRALID1_2"), 
 		"Answers":[
-			[tr("TRENDCONVERSATION"),["ADDTOPARTY_ALI","NEGLECT_ALI","END"]]
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_ALI","NEGLECT_ALI","KILLNPC_ALI","END"]]
 			]
 		}
 
@@ -35,7 +35,7 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRBERKEATAD1_2"), 
 		"Answers":[
-			[tr("TRENDCONVERSATION"),["ADDTOPARTY_BERKEATA","NEGLECT_BERKEATA","END"]]
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_BERKEATA","NEGLECT_BERKEATA","KILLNPC_BERKEATA","END"]]
 			]
 		}
 
@@ -52,7 +52,7 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRDANAD1_2"), 
 		"Answers":[
-			[tr("TRENDCONVERSATION"),["ADDTOPARTY_DANA","NEGLECT_DANA", "END"]]
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_DANA","NEGLECT_DANA","KILLNPC_DANA", "END"]]
 			]
 		}
 
@@ -68,7 +68,7 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRZULARD1_2"), 
 		"Answers":[
-			[tr("TRENDCONVERSATION"),["ADDTOPARTY_ZULAR","NEGLECT_ZULAR","END"]]
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_ZULAR","NEGLECT_ZULAR","KILLNPC_ZULAR","END"]]
 			]
 		}
 
@@ -132,6 +132,10 @@ func effect(eff):
 				if x.character == eff.split("_")[1]:
 					x.need_dialogue = false
 					break
+		"KILLNPC":
+			for x in get_tree().get_nodes_in_group("NPC"):
+				if x.character == eff.split("_")[1]:
+					x.queue_free()
 		"END":
 			queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
