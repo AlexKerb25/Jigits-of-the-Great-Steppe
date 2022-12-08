@@ -36,7 +36,11 @@ func _process(delta):
 		$AnimatedSprite.play(b+"MOVE")
 		$Particles2D.emitting = true
 	
-
+func give_data():
+	return {"filename":filename,
+	"position.x":position.x,
+	"position.y":position.y
+	}
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

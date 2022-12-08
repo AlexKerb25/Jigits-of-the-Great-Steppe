@@ -49,3 +49,12 @@ func _on_Interaction_area_exited(area):
 	if area.type == "PLAYER":
 		p = false
 	pass # Replace with function body.
+
+func give_data():
+	return {"filename":filename,
+	"position.x":position.x,
+	"position.y":position.y,
+	"character":character,
+	"need_dialogue":need_dialogue,
+	"dialogue":dialogue
+	}

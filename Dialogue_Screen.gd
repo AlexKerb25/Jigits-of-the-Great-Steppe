@@ -90,6 +90,8 @@ func _ready():
 	$Tween.interpolate_property($Speaker1, "visible_characters", 0, $Speaker1.text.length()+1,0.4)
 	$Tween.interpolate_property($Speaker2, "visible_characters", 0, $Speaker2.text.length()+1,0.4)
 	$Tween.start()
+	$TextureRect.texture = load("res://Sprites/ANIMS/"+speaker1+".tres")
+	$TextureRect2.texture = load("res://Sprites/ANIMS/"+speaker2+".tres")
 	start("1")
 	pass # Replace with function body.
 
