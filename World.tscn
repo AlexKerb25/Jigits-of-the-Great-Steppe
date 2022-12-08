@@ -5,19 +5,15 @@
 [ext_resource path="res://BattleAnim.gd" type="Script" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World.tres" type="TileSet" id=5]
-[ext_resource path="res://Sprites/Concepts/Yurt2.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Concepts/Yurt3.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Concepts/rock.png" type="Texture" id=8]
+[ext_resource path="res://STATIC.gd" type="Script" id=6]
+[ext_resource path="res://ROCK.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Yurta2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/ANIMS/xue hua piao piao bei feng xiao xiao Type Beat (prod. Goated) Zhang Ai Qin Singing Yi Jian Mei.mp3" type="AudioStream" id=9]
+[ext_resource path="res://Yurta.tscn" type="PackedScene" id=10]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
 [ext_resource path="res://GameMenu.gd" type="Script" id=40]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=43]
-
-[sub_resource type="RectangleShape2D" id=27]
-extents = Vector2( 174, 100 )
-
-[sub_resource type="RectangleShape2D" id=28]
-extents = Vector2( 60, 41 )
 
 [sub_resource type="Shader" id=26]
 code = "shader_type canvas_item;
@@ -322,150 +318,18 @@ dialogue = "ZULAR1"
 [node name="Enemy" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 352, -16 )
 
-[node name="Yurta" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 1728, 504 )
+[node name="Yurta" parent="TileMap" groups=["Saveobject"] instance=ExtResource( 10 )]
+script = ExtResource( 6 )
 
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 6 )
-offset = Vector2( 0, -63 )
+[node name="ROCK" parent="TileMap" groups=["Saveobject"] instance=ExtResource( 7 )]
+script = ExtResource( 6 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta"]
-position = Vector2( 2, -84 )
-shape = SubResource( 27 )
-
-[node name="Yurta2" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 1136, 1144 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta2"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 7 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta2"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="Yurta3" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 2072, 944 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta3"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 6 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta3"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="Yurta4" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 896, -112 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta4"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 7 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta4"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="Yurta5" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 2296, -17 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta5"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 7 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta5"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="Yurta6" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 1664, -520 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta6"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 6 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta6"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="Yurta7" type="StaticBody2D" parent="TileMap"]
-position = Vector2( -544, 416 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta7"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 7 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta7"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="Yurta8" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 208, 925 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta8"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 6 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta8"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="Yurta9" type="StaticBody2D" parent="TileMap"]
-position = Vector2( -136, -352 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/Yurta9"]
-position = Vector2( 0, 7.99998 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 6 )
-offset = Vector2( 0, -63 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Yurta9"]
-position = Vector2( 0, -88 )
-shape = SubResource( 27 )
-
-[node name="ROCK" type="StaticBody2D" parent="TileMap"]
-position = Vector2( 1408, 64 )
-
-[node name="Yurt2" type="Sprite" parent="TileMap/ROCK"]
-position = Vector2( 0, -5.72205e-06 )
-scale = Vector2( 5, 5 )
-z_index = 1
-texture = ExtResource( 8 )
-offset = Vector2( 0, -15 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/ROCK"]
-position = Vector2( 4, -39 )
-shape = SubResource( 28 )
+[node name="Yurta2" parent="TileMap" groups=["Saveobject"] instance=ExtResource( 8 )]
+script = ExtResource( 6 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Intro" type="ColorRect" parent="GUI"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 9 )
 anchor_right = 0.99975
@@ -695,7 +559,8 @@ anims/1 = SubResource( 24 )
 anims/RESET = SubResource( 25 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -12.236
+stream = ExtResource( 9 )
+volume_db = -10.488
 autoplay = true
 bus = "New Bus"
 

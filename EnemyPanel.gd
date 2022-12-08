@@ -59,12 +59,13 @@ func _on_EnemyPanel_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.is_pressed() and event.button_index == 1 and get_parent().get_parent().get_parent().attackingcharacter != null:
 			var attacker = get_member_panel(get_parent().get_parent().get_parent().attackingcharacter)
-			hp -= (get_parent().get_parent().get_parent().attackingcharacter["Weapon"][3])+(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][4]*get_parent().get_parent().get_parent().attackingcharacter["Chars"]["Level"])
-			if attacker.member["Weapon"][1] == "MELEE":
-				attacker.member["Chars"]["HP"] -= attackpower*counterpercent
-			attacker.gonacd(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][2])
-			attacker.drawline(self)
-			get_parent().get_parent().get_parent().attackingcharacter = null
+			if is_instance_valid(attacker):
+				hp -= (get_parent().get_parent().get_parent().attackingcharacter["Weapon"][3])+(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][4]*get_parent().get_parent().get_parent().attackingcharacter["Chars"]["Level"])
+				if attacker.member["Weapon"][1] == "MELEE":
+					attacker.member["Chars"]["HP"] -= attackpower*counterpercent
+				attacker.gonacd(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][2])
+				attacker.drawline(self)
+				get_parent().get_parent().get_parent().attackingcharacter = null
 	pass # Replace with function body.
 
 func _on_topas_timeout():
