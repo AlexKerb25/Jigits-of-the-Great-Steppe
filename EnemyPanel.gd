@@ -22,6 +22,7 @@ func _ready():
 	$HP.max_value = maxhp
 	$HP.value = hp
 	$TextureRect.texture = dzungaranimation[type]
+	$Line2D.global_position = Vector2(0,0)
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
