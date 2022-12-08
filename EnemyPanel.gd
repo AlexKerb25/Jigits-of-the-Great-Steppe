@@ -5,11 +5,11 @@ extends Panel
 # var a = 2
 # var b = "text"
 
-var hp = 100
-var maxhp = 100
-var attackpower = 10
-var cd = 7
-var counterpercent = 0.1
+export var hp = 100
+export var maxhp = 100
+export var attackpower = 10
+export var cd = 7
+export var counterpercent = 0.1
 export var type = 'dzungar1'
 export var atype = "MELEE"
 var dzungaranimation = {'dzungar1': preload('res://Sprites/ANIMS/Dzungar1.tres'), 'dzungar2': preload('res://Sprites/ANIMS/Dzungar2.tres'), 'dzungar3': preload('res://Sprites/ANIMS/Dzungar3.tres'), 'dzungar4': preload('res://Sprites/ANIMS/Dzungar4.tres')}
@@ -70,6 +70,8 @@ func _on_topas_timeout():
 	var players = []
 	for x in battle.get_node('CanvasLayer/HBoxContainer').get_children():
 		players.append(x)
+	if players.size() == 0:
+		return
 	players.shuffle()
 	var target = players[0] 
 	target.member['Chars']['HP'] -= attackpower

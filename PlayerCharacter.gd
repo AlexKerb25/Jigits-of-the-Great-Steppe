@@ -59,6 +59,9 @@ func _process(delta):
 			$TextureRect.texture = portraits[member["Name"]]
 	else:
 			$TextureRect.texture = portraits[member["Name"]]
+	if member["Chars"]["HP"] <= 0:
+		Data.party.erase(member)
+		queue_free()
 		
 		
 

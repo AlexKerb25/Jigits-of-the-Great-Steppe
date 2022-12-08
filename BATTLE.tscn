@@ -186,6 +186,11 @@ anchor_bottom = 0.0
 margin_left = 20.0
 margin_right = 284.0
 margin_bottom = 264.0
+hp = 115
+maxhp = 115
+attackpower = 7
+cd = 3
+counterpercent = 0.2
 
 [node name="EnemyPanel2" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
 anchor_right = 0.0
@@ -193,6 +198,8 @@ anchor_bottom = 0.0
 margin_left = 334.0
 margin_right = 598.0
 margin_bottom = 264.0
+attackpower = 30
+cd = 12
 type = "dzungar2"
 
 [node name="EnemyPanel3" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
@@ -201,6 +208,11 @@ anchor_bottom = 0.0
 margin_left = 648.0
 margin_right = 912.0
 margin_bottom = 264.0
+hp = 150
+maxhp = 150
+attackpower = 2
+cd = 1
+counterpercent = 0.25
 type = "dzungar3"
 
 [node name="EnemyPanel4" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
@@ -209,9 +221,15 @@ anchor_bottom = 0.0
 margin_left = 962.0
 margin_right = 1226.0
 margin_bottom = 264.0
+hp = 75
+maxhp = 75
+attackpower = 35
+cd = 15
 type = "dzungar4"
+atype = "RANGE"
 
 [node name="Intro" type="ColorRect" parent="CanvasLayer"]
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 23 )
 anchor_right = 0.99975
