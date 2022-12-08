@@ -77,6 +77,9 @@ func _on_topas_timeout():
 	target.member['Chars']['HP'] -= attackpower
 	if atype == "MELEE":
 		hp -= ((target.member['Weapon'][3])+(target.member['Weapon'][4]*target.member['Chars']["Level"]))*target.member['Weapon'][5]
+	$Line2D.clear_points()
+	$Line2D.add_point($Line2D.global_position)
+	$Line2D.add_point(target.rect_global_position)
 	$TextureProgress.value = 100
 	$Tween.interpolate_property($TextureProgress, "value",100, 0, cd)
 	$cooldown.wait_time = cd
