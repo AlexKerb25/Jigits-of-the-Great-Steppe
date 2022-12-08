@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://PlayerCharacter.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Concepts/ASAN_IDLE/Asan1.png" type="Texture" id=2]
@@ -23,6 +23,13 @@ size = 8
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
+
+[sub_resource type="Gradient" id=23]
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 0, 0, 0, 0.854902 )
+
+[sub_resource type="GradientTexture" id=24]
+gradient = SubResource( 23 )
 
 [node name="PlayerCharacter4" type="Panel"]
 margin_left = 492.0
@@ -112,6 +119,25 @@ margin_right = 0.0719986
 margin_bottom = -0.00800133
 custom_fonts/font = SubResource( 22 )
 align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+anchor_left = -0.00384848
+anchor_top = -0.000333324
+anchor_right = 0.996636
+anchor_bottom = 1.00015
+margin_left = 1.016
+margin_top = 0.0879974
+margin_right = 0.887993
+margin_bottom = -0.0400085
+value = 100.0
+texture_progress = SubResource( 24 )
+fill_mode = 4
+nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": true
 }

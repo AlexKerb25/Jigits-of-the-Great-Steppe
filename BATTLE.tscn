@@ -212,7 +212,6 @@ margin_bottom = 264.0
 type = "dzungar4"
 
 [node name="Intro" type="ColorRect" parent="CanvasLayer"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 23 )
 anchor_right = 0.99975
