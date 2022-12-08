@@ -8,6 +8,7 @@ var goto = "Settings"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Data.enemy_id = null
 	pass # Replace with function body.
 
 

@@ -10,6 +10,18 @@ var accspeed = 500
 var back = false
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
+	var s = false
+	for x in $Interaction.get_overlapping_areas():
+		s = true
+		if x.get_parent().get("need_dialogue") != null:
+			if x.get_parent().need_dialogue and x.get_parent().cantdial == false:
+				$Sprite.visible = true
+			else:
+				$Sprite.visible = false
+		else:
+			$Sprite.visible = false
+	if s == false:
+		$Sprite.visible = false
 	var movvector = Vector2(0,0)
 	if get_tree().get_nodes_in_group("BLOCKER").size() == 0:
 		if Input.is_action_pressed("ui_down"):

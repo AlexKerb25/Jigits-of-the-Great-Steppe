@@ -11,10 +11,10 @@ TRALI;Ali;Али
 TRBERKEATA;Berke-Ata;Берке-Ата
 TRZULAR;Zul'Ar;Зульяр
 TRDANA;Dana;Дана
-TRALID1_1;Hey, I've heard the village will be attacked by dzungars! Do you need help from the best Axeman of The Steppe, Asan?;Эй, я слышал, на деревню готовятся напасть джунгары! Тебе нужна помощь лучшего Мастера Топора Степи, Асан?
+TRALID1_1;Hey, I've heard the village will be attacked by dzungars! Do you need help from the best Fighter of The Steppe, Asan?;Эй, я слышал, на деревню готовятся напасть джунгары! Тебе нужна помощь лучшего Мастера Топора Степи, Асан?
 TRALID1_1A1;Sure, I need your courage to defend the villagers!;Конечно, мне не обойтись без твоей отваги во время защиты жителей!
 TRALID1_1A2;I need to think, your boldness can get us in trouble;Мне нужно подумать, твоя безрассудность может доставить нам проблем
-TRALID1_2;My axe will crush the invaders!;Мой топор разгромит захватчиков!
+TRALID1_2;My fists will crush the invaders!;Мои кулаки разгромят захватчиков!
 TRENDCONVERSATION;End conversation;Закончить разговор
 TRBERKEATAD1_1;Hello, balam. This village's destiny is in your hands! Let me help you handle it!;Привет, балам. Судьба этого аула в твоих руках! Так дай же мне помочь тебе!
 TRBERKEATAD1_1A1;Your fighting experience and Spearman skills would be very useful!;Ваши боевые навыки и искусство Копейщика будут очень полезны!
@@ -41,8 +41,8 @@ TRHP;Health;Здоровье
 TRSPIRITUALITY;Spirituality;Сила Духа
 TREXP;Experience;Опыт
 TRNEXTEXP;Experience for Next Level;Опыт для Следующего Уровня
-TRALID;Ali is famous soldier whose axe has seen many battles. His only eye shows total self confidence;Али - знаменитый солдат, чей топор видал множество битв. Его единственный глаз источает полную уверенность в своих силах
-TRAXEMASTER;Axe Master;Мастер Топора
+TRALID;Ali is famous soldier whose fists have seen many battles. His only eye shows total self confidence;Али - знаменитый солдат, чьи кулаки видали множество битв. Его единственный глаз источает полную уверенность в своих силах
+TRAXEMASTER;Fighter;Боец
 TRSPEARMAN;Spearman;Копейщик
 TRBERKEATAD;Experienced warrior, Berke-Ata prefers well-planned combat strategy. His inspirational skills are second to none;Опытный вояка, Берке-Ата предпочитает хорошо распланированную стратегию боя. Его способности к воодушевлению товарищей не знают равных
 TRDANAD;Archer girl. Her beauty's only rival is her archery skill;Девушка-лучница. Единственный конкурент ее красоте - ее навыки стрельбы

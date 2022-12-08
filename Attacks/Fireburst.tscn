@@ -47,3 +47,10 @@ one_shot = true
 explosiveness = 0.7
 randomness = 0.21
 process_material = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

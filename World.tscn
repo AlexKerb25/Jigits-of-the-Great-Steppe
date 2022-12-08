@@ -1,14 +1,12 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://ASAN.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BattleAnim.gd" type="Script" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World.tres" type="TileSet" id=5]
-[ext_resource path="res://STATIC.gd" type="Script" id=6]
 [ext_resource path="res://ROCK.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Yurta2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Sprites/ANIMS/xue hua piao piao bei feng xiao xiao Type Beat (prod. Goated) Zhang Ai Qin Singing Yi Jian Mei.mp3" type="AudioStream" id=9]
 [ext_resource path="res://Yurta.tscn" type="PackedScene" id=10]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
@@ -318,14 +316,11 @@ dialogue = "ZULAR1"
 [node name="Enemy" parent="TileMap" instance=ExtResource( 4 )]
 position = Vector2( 352, -16 )
 
-[node name="Yurta" parent="TileMap" groups=["Saveobject"] instance=ExtResource( 10 )]
-script = ExtResource( 6 )
+[node name="Yurta" parent="TileMap" instance=ExtResource( 10 )]
 
-[node name="ROCK" parent="TileMap" groups=["Saveobject"] instance=ExtResource( 7 )]
-script = ExtResource( 6 )
+[node name="ROCK" parent="TileMap" instance=ExtResource( 7 )]
 
-[node name="Yurta2" parent="TileMap" groups=["Saveobject"] instance=ExtResource( 8 )]
-script = ExtResource( 6 )
+[node name="Yurta2" parent="TileMap" instance=ExtResource( 8 )]
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -502,10 +497,10 @@ __meta__ = {
 }
 
 [node name="Label5" type="Label" parent="GUI/GameMenu/Desc"]
-anchor_left = 0.349826
-anchor_top = 0.667656
-anchor_right = 0.461215
-anchor_bottom = 0.931306
+anchor_left = 0.333333
+anchor_top = 0.667655
+anchor_right = 0.444722
+anchor_bottom = 0.931305
 margin_right = -0.32
 margin_bottom = -0.85
 custom_fonts/font = SubResource( 21 )
@@ -557,12 +552,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/BattleAnim"]
 anims/1 = SubResource( 24 )
 anims/RESET = SubResource( 25 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-volume_db = -10.488
-autoplay = true
-bus = "New Bus"
 
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="GUI/GameMenu/Button2" to="GUI/GameMenu" method="_on_Button2_pressed"]

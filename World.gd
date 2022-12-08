@@ -12,7 +12,23 @@ func _ready():
 		data = Save.data
 		print(data)
 		loading()
+	else:
+		Save.savegame()
+	for x in Data.party:
+		levelup(x)
+	yield(get_tree().create_timer(0.1),"timeout")
+	Save.savegame()
 	pass # Replace with function body.
+
+func levelup(obj):
+	if obj["Chars"]["EXP"] >= obj["Chars"]["EXPtoLevel"]:
+		obj["Chars"]["EXP"] -= obj["Chars"]["EXPtoLevel"]
+		obj["Chars"]["Level"] += 1
+		obj["Chars"]["MaxHP"] *= 1.1
+		obj["Chars"]["HP"] = obj["Chars"]["MaxHP"]
+		obj["Chars"]["Spirituality"] *= 1.1
+		obj["Chars"]["EXPtoLevel"] *= 1.3
+		levelup(obj)
 
 func saving():
 	var result = []

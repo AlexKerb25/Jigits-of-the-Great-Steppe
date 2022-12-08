@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://World.tres" type="TileSet" id=1]
-[ext_resource path="res://EnemyPanel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BATTLE.gd" type="Script" id=3]
 [ext_resource path="res://GachiwarsDuelofFate.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Intro.gd" type="Script" id=5]
+[ext_resource path="res://Outro.gd" type="Script" id=6]
 
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.215686, 0.215686, 0.215686, 0.741176 )
@@ -146,6 +146,36 @@ tracks/0/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="Animation" id=26]
+resource_name = "1"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.05, 0.0 ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:material:shader_param/circle_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
 [node name="BATTLE" type="Node2D"]
 script = ExtResource( 3 )
 
@@ -181,40 +211,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="EnemyPanel" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 20.0
-margin_right = 284.0
-margin_bottom = 264.0
-
-[node name="EnemyPanel2" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 334.0
-margin_right = 598.0
-margin_bottom = 264.0
-type = "dzungar2"
-
-[node name="EnemyPanel3" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 648.0
-margin_right = 912.0
-margin_bottom = 264.0
-type = "dzungar3"
-
-[node name="EnemyPanel4" parent="CanvasLayer/HBoxContainer2" instance=ExtResource( 2 )]
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 962.0
-margin_right = 1226.0
-margin_bottom = 264.0
-type = "dzungar4"
-atype = "RANGE"
-
 [node name="Intro" type="ColorRect" parent="CanvasLayer"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 23 )
 anchor_right = 0.99975
@@ -230,6 +227,23 @@ __meta__ = {
 anims/1 = SubResource( 24 )
 anims/RESET = SubResource( 25 )
 
+[node name="Outro" type="ColorRect" parent="CanvasLayer"]
+modulate = Color( 0, 0, 0, 1 )
+material = SubResource( 23 )
+anchor_right = 0.99975
+anchor_bottom = 1.00044
+margin_right = 0.319946
+margin_bottom = -0.320007
+mouse_filter = 2
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Outro"]
+anims/1 = SubResource( 26 )
+anims/RESET = SubResource( 27 )
+
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color( 0.462745, 0.392157, 0.392157, 1 )
 tile_set = ExtResource( 1 )
@@ -240,4 +254,8 @@ tile_data = PoolIntArray( -131079, 0, 1, -131078, 0, 2, -131077, 0, 0, -131076, 
 stream = ExtResource( 4 )
 volume_db = -13.109
 
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 2
+
 [connection signal="animation_finished" from="CanvasLayer/Intro/AnimationPlayer" to="CanvasLayer/Intro" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/Outro/AnimationPlayer" to="CanvasLayer/Outro" method="_on_AnimationPlayer_animation_finished"]

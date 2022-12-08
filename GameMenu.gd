@@ -21,8 +21,8 @@ func descmember(mname):
 			$Desc/Label3.text = tr("TR"+x["Class"])
 			$Desc/TextureRect2.texture = religs[x["Faith"]]
 			$Desc/Label4.text = tr("TR"+x["Faith"])
-			$Desc/Label5.text = tr("TRLEVEL") + " - "+str(x["Chars"]["Level"]) + " \n" + tr("TREXP") + " - "+str(x["Chars"]["EXP"])  + " \n" + tr("TRNEXTEXP") + " - "+str(x["Chars"]["EXPtoLevel"])
-			$Desc/Label6.text = tr("TRHP") + " - "+str(x["Chars"]["HP"]) + " \n" + tr("TRSPIRITUALITY") + " - "+str(x["Chars"]["Spirituality"]) 
+			$Desc/Label5.text = tr("TRLEVEL") + " - "+str(x["Chars"]["Level"]) + " \n" + tr("TREXP") + " - "+str(round(x["Chars"]["EXP"]))  + " \n" + tr("TRNEXTEXP") + " - "+str(round(x["Chars"]["EXPtoLevel"]))
+			$Desc/Label6.text = tr("TRHP") + " - "+str(round(x["Chars"]["HP"])) + " \n" + tr("TRSPIRITUALITY") + " - "+str(round(x["Chars"]["Spirituality"]))
 			$Desc/TextureRect2.hint_tooltip = tr("TR"+x["Faith"]+"D")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

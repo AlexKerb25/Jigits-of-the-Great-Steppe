@@ -21,6 +21,15 @@ func savegame():
 	f.close()
 
 	pass
+	
+func savepartygame():
+	var f = File.new()
+	f.open("user://save.jots",File.WRITE)
+	f.store_line(to_json(Data.settings))
+	f.store_line(to_json(Data.party))
+	f.close()
+
+	pass
 
 func loadgame():
 	var f = File.new()

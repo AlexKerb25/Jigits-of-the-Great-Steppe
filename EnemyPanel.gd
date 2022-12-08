@@ -13,7 +13,9 @@ export var counterpercent = 0.1
 export var type = 'dzungar1'
 export var atype = "MELEE"
 var dzungaranimation = {'dzungar1': preload('res://Sprites/ANIMS/Dzungar1.tres'), 'dzungar2': preload('res://Sprites/ANIMS/Dzungar2.tres'), 'dzungar3': preload('res://Sprites/ANIMS/Dzungar3.tres'), 'dzungar4': preload('res://Sprites/ANIMS/Dzungar4.tres')}
+var burst = preload("res://Attacks/Fireburst.tscn")
 
+export var xpvalue = 50
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,6 +34,9 @@ func _process(delta):
 	$HP.max_value = maxhp
 	$HP.value = hp
 	if hp <= 0:
+		var xp = float(xpvalue)/Data.party.size()
+		for x in Data.party:
+			x["Chars"]["EXP"] += xp
 		queue_free()
 	
 	if get_parent().get_parent().get_parent().enemyattack == true:
@@ -63,6 +68,10 @@ func _on_EnemyPanel_gui_input(event):
 				hp -= (get_parent().get_parent().get_parent().attackingcharacter["Weapon"][3])+(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][4]*get_parent().get_parent().get_parent().attackingcharacter["Chars"]["Level"])
 				if attacker.member["Weapon"][1] == "MELEE":
 					attacker.member["Chars"]["HP"] -= attackpower*counterpercent
+				if attacker.member["Weapon"][0] == "FIREBURST":
+					var i = burst.instance()
+					i.global_position = rect_global_position+Vector2(132,132)
+					get_parent().get_parent().get_parent().get_node("CanvasLayer2").add_child(i)
 				attacker.gonacd(get_parent().get_parent().get_parent().attackingcharacter["Weapon"][2])
 				attacker.drawline(self)
 				get_parent().get_parent().get_parent().attackingcharacter = null
