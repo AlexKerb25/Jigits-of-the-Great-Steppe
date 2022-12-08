@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://Sprites/Concepts/ASAN_IDLE/BACK/Asan2.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Concepts/ASAN_IDLE/BACK/Asan3.png" type="Texture" id=2]
@@ -43,6 +43,7 @@
 [ext_resource path="res://Member.gd" type="Script" id=41]
 [ext_resource path="res://Sprites/Concepts/Asan.png" type="Texture" id=42]
 [ext_resource path="res://fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=43]
+[ext_resource path="res://Sprites/Concepts/Yurt.png" type="Texture" id=44]
 
 [sub_resource type="TileSet" id=3]
 0/name = "1.png 0"
@@ -584,6 +585,11 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="Yurt" type="Sprite" parent="."]
+position = Vector2( 1112, 456 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 44 )
 
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="GUI/GameMenu/Button2" to="GUI/GameMenu" method="_on_Button2_pressed"]
