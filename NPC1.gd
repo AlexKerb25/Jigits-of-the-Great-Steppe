@@ -7,6 +7,8 @@ extends KinematicBody2D
 export var character = "BERKEATA"
 export var dialogue = "ALI1"
 export var need_dialogue = false
+var cantdial = false
+var joiningdials = ["ALI1", "BERKEATA1", "DANA1","ZULAR1"]
 
 var p = false
 var ds = preload("res://Dialogue_Screen.tscn")
@@ -17,14 +19,17 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if joiningdials.has(dialogue) and Data.party.size() >= 4:
+		cantdial = true
+	else:
+		cantdial = false
 	$AnimatedSprite.play(character+"_IDLE")
-	if need_dialogue:
+	if need_dialogue and cantdial == false:
 		$AnimatedSprite2.visible = true
 	else:
 		$AnimatedSprite2.visible = false
 	if Input.is_action_just_pressed("ui_accept") and get_tree().get_nodes_in_group("BLOCKER").size() == 0:
-		if need_dialogue and p:
-			need_dialogue = false
+		if need_dialogue and p and cantdial == false:
 			var d = ds.instance()
 			d.speaker1 = "ASAN"
 			d.speaker2 = character

@@ -19,7 +19,7 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRALID1_2"), 
 		"Answers":[
-			[tr("TRENDCONVERSATION"),["END"]]
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_ALI","NEGLECT_ALI","END"]]
 			]
 		}
 
@@ -35,7 +35,7 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRBERKEATAD1_2"), 
 		"Answers":[
-			[tr("TRENDCONVERSATION"),["END"]]
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_BERKEATA","NEGLECT_BERKEATA","END"]]
 			]
 		}
 
@@ -52,7 +52,23 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRDANAD1_2"), 
 		"Answers":[
-			[tr("TRENDCONVERSATION"),["END"]]
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_DANA","NEGLECT_DANA", "END"]]
+			]
+		}
+
+		},
+"ZULAR1":
+	{"1":
+		{"Text":tr("TRZULARD1_1"), 
+		"Answers":[
+			[tr("TRZULARD1_1A1"),["GOTO_2"]],
+			[tr("TRZULARD1_1A2"),["END"]]
+			]
+		},
+	"2":
+		{"Text":tr("TRZULARD1_2"), 
+		"Answers":[
+			[tr("TRENDCONVERSATION"),["ADDTOPARTY_ZULAR","NEGLECT_ZULAR","END"]]
 			]
 		}
 
@@ -105,8 +121,15 @@ func speak(phrase):
 	pass
 func effect(eff):
 	match eff.split("_")[0]:
+		"ADDTOPARTY":
+			Data.party.append(Data.potential_members[eff.split("_")[1]].duplicate(true))
 		"GOTO":
 			speak(eff.split("_")[1])
+		"NEGLECT":
+			for x in get_tree().get_nodes_in_group("NPC"):
+				if x.character == eff.split("_")[1]:
+					x.need_dialogue = false
+					break
 		"END":
 			queue_free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
