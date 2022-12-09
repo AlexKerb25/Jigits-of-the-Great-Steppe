@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://ASAN.tscn" type="PackedScene" id=2]
@@ -18,6 +18,14 @@
 [ext_resource path="res://border.tscn" type="PackedScene" id=16]
 [ext_resource path="res://borde2r.tscn" type="PackedScene" id=17]
 [ext_resource path="res://anotheryurta2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://ROCK38.tscn" type="PackedScene" id=19]
+[ext_resource path="res://ROCK39.tscn" type="PackedScene" id=20]
+[ext_resource path="res://ROCK36.tscn" type="PackedScene" id=21]
+[ext_resource path="res://ROCK37.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Transitions2.gd" type="Script" id=23]
+[ext_resource path="res://Sprites/Concepts/Sungods-export.png" type="Texture" id=25]
+[ext_resource path="res://CUTSCENE.gd" type="Script" id=26]
+[ext_resource path="res://Sprites/Concepts/derevo.png" type="Texture" id=27]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
 [ext_resource path="res://GameMenu.gd" type="Script" id=40]
@@ -290,6 +298,211 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.03 ]
+}
+
+[sub_resource type="DynamicFont" id=29]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 43 )
+
+[sub_resource type="Animation" id=27]
+resource_name = "New Anim"
+length = 48.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5.9, 7.9, 10.9, 14.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 13.1, 17.4, 20.5, 23.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 21.9, 25.2, 27.8, 30.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label5:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 27.7, 29.8, 32.2, 34.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label6:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 32.5, 34.5, 37.1, 39.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TextureRect2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 25.2, 26, 28.2, 29.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TextureRect:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 3.5, 41.9, 44.8, 46.3, 47.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1.03526, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0.490196, 0.501961, 1 ), Color( 0, 0.0627451, 0.0627451, 1 ), Color( 0, 0.0627451, 0.0627451, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 2.8, 5.1, 9.2, 12.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label3:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label4:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label5:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Label6:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("TextureRect2:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("TextureRect:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Label:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="World" type="Node2D" groups=["WORLD"]]
@@ -617,6 +830,14 @@ position = Vector2( 0, -2896 )
 [node name="StaticBody2D5" parent="TileMap" instance=ExtResource( 17 )]
 position = Vector2( 0, 4810 )
 
+[node name="ROCK36" parent="TileMap" instance=ExtResource( 21 )]
+
+[node name="ROCK37" parent="TileMap" instance=ExtResource( 22 )]
+
+[node name="ROCK39" parent="TileMap" instance=ExtResource( 20 )]
+
+[node name="ROCK38" parent="TileMap" instance=ExtResource( 19 )]
+
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Intro" type="ColorRect" parent="GUI"]
@@ -855,6 +1076,7 @@ anchor_right = 0.99975
 anchor_bottom = 1.00044
 margin_right = 0.319946
 margin_bottom = -0.320007
+mouse_filter = 2
 color = Color( 0, 0, 0, 1 )
 script = ExtResource( 15 )
 __meta__ = {
@@ -862,6 +1084,154 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="GUI/Transitions1"]
+
+[node name="Transitions2" type="ColorRect" parent="GUI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 0.99975
+anchor_bottom = 1.00044
+margin_right = 0.319946
+margin_bottom = -0.320007
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Tween" type="Tween" parent="GUI/Transitions2"]
+
+[node name="CUTSCENE" type="Control" parent="GUI"]
+anchor_right = 1.00275
+anchor_bottom = 1.00244
+margin_right = -3.52
+margin_bottom = -1.76
+mouse_filter = 2
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="GUI/CUTSCENE"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -6.10352e-05
+mouse_filter = 2
+texture = ExtResource( 25 )
+expand = true
+
+[node name="Label" type="Label" parent="GUI/CUTSCENE"]
+anchor_left = 0.05
+anchor_top = 0.0888889
+anchor_right = 0.95
+anchor_bottom = 0.180111
+margin_right = -6.10352e-05
+margin_bottom = -1.68001
+custom_fonts/font = SubResource( 29 )
+text = "TRSCENE1"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/CUTSCENE"]
+"anims/New Anim" = SubResource( 27 )
+anims/RESET = SubResource( 28 )
+
+[node name="Label2" type="Label" parent="GUI/CUTSCENE"]
+anchor_left = 0.05
+anchor_top = 0.8
+anchor_right = 0.95
+anchor_bottom = 0.891222
+margin_right = -6.10352e-05
+margin_bottom = -1.68001
+custom_fonts/font = SubResource( 29 )
+text = "TRSCENE2"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label3" type="Label" parent="GUI/CUTSCENE"]
+anchor_left = 0.05
+anchor_top = 0.0888889
+anchor_right = 0.95
+anchor_bottom = 0.180111
+margin_right = -6.10352e-05
+margin_bottom = -1.68001
+custom_fonts/font = SubResource( 29 )
+text = "TRSCENE3"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label4" type="Label" parent="GUI/CUTSCENE"]
+anchor_left = 0.05
+anchor_top = 0.8
+anchor_right = 0.95
+anchor_bottom = 0.891222
+margin_right = -6.10352e-05
+margin_bottom = -1.68001
+custom_fonts/font = SubResource( 29 )
+text = "TRSCENE4"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label5" type="Label" parent="GUI/CUTSCENE"]
+anchor_left = 0.05
+anchor_top = 0.0888889
+anchor_right = 0.95
+anchor_bottom = 0.180111
+margin_right = -6.10352e-05
+margin_bottom = -1.68001
+custom_fonts/font = SubResource( 29 )
+text = "TRSCENE5"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Label6" type="Label" parent="GUI/CUTSCENE"]
+anchor_left = 0.05
+anchor_top = 0.8
+anchor_right = 0.95
+anchor_bottom = 0.891222
+margin_right = -6.10352e-05
+margin_bottom = -1.68001
+custom_fonts/font = SubResource( 29 )
+text = "TRSCENE6"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/CUTSCENE"]
+anchor_top = 0.273611
+anchor_right = 0.99975
+anchor_bottom = 0.714333
+margin_right = 0.32
+margin_bottom = -0.320004
+mouse_filter = 2
+texture = ExtResource( 27 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="1" type="Position2D" parent="."]
 position = Vector2( 464, -256 )
@@ -872,8 +1242,13 @@ position = Vector2( 544, 152 )
 [node name="3" type="Position2D" parent="."]
 position = Vector2( 2064, 320 )
 
+[node name="4" type="Position2D" parent="."]
+position = Vector2( 6896, 4168 )
+
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="GUI/GameMenu/Button2" to="GUI/GameMenu" method="_on_Button2_pressed"]
 [connection signal="pressed" from="GUI/GameMenu/Button3" to="GUI/GameMenu" method="_on_Button3_pressed"]
 [connection signal="animation_finished" from="GUI/BattleAnim/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="tween_completed" from="GUI/Transitions1/Tween" to="GUI/Transitions1" method="_on_Tween_tween_completed"]
+[connection signal="tween_completed" from="GUI/Transitions2/Tween" to="GUI/Transitions2" method="_on_Tween_tween_completed"]
+[connection signal="animation_finished" from="GUI/CUTSCENE/AnimationPlayer" to="GUI/CUTSCENE" method="_on_AnimationPlayer_animation_finished"]

@@ -7,6 +7,7 @@ extends Node2D
 var data
 var event1 = false
 var event2 = false
+var event3 = false
 var ds = preload("res://Dialogue_Screen.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -66,6 +67,12 @@ func _process(delta):
 			d.dialogue = "ASAN1"
 			get_node("GUI").add_child(d)
 			Save.savegame()
+	if event3 == false and Data.events.has("D3") == false:
+		if Data.events.has("D2"):
+			$GUI/Transitions2.fade()
+			event3 = true
+			Data.events.append("D3")
+			pass
 	pass
 
 
