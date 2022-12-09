@@ -6,8 +6,11 @@ extends Node
 # var b = "text"
 var data 
 
+var d
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 func savegame():
@@ -28,6 +31,7 @@ func savepartygame():
 	f.open("user://save.jots",File.WRITE)
 	f.store_line(to_json(Data.settings))
 	f.store_line(to_json(Data.party))
+	f.store_line(to_json(Data.events))
 	f.close()
 
 	pass
@@ -43,7 +47,7 @@ func loadgame():
 	if f2.open("user://wsave.jots",File.READ) != OK:
 		return
 	data = parse_json(f2.get_line())
-	
+	d = data
 	f.close()
 	f2.close()
 	pass
