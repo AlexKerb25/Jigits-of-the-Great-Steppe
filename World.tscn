@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://ASAN.tscn" type="PackedScene" id=2]
@@ -13,7 +13,8 @@
 [ext_resource path="res://zabor2.tscn" type="PackedScene" id=11]
 [ext_resource path="res://telezhka.tscn" type="PackedScene" id=12]
 [ext_resource path="res://bonefire.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Yurt4.tscn" type="PackedScene" id=14]
+[ext_resource path="res://anotheryurta.tscn" type="PackedScene" id=14]
+[ext_resource path="res://anotheryurta2.tscn" type="PackedScene" id=15]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
 [ext_resource path="res://GameMenu.gd" type="Script" id=40]
@@ -325,11 +326,23 @@ position = Vector2( 450, -40 )
 
 [node name="Yurta" parent="TileMap" instance=ExtResource( 10 )]
 
+[node name="Yurta24" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( -1528, 0 )
+
 [node name="Yurta4" parent="TileMap" instance=ExtResource( 10 )]
 position = Vector2( 176, 704 )
 
+[node name="Yurta16" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( -1184, 1144 )
+
+[node name="Yurta21" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 2392, 1816 )
+
 [node name="Yurta5" parent="TileMap" instance=ExtResource( 10 )]
 position = Vector2( 448, -384 )
+
+[node name="Yurta14" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 776, 1920 )
 
 [node name="ROCK3" parent="TileMap" instance=ExtResource( 7 )]
 position = Vector2( 104, -216 )
@@ -339,8 +352,23 @@ position = Vector2( 832, 925 )
 
 [node name="Yurta2" parent="TileMap" instance=ExtResource( 8 )]
 
+[node name="Yurta25" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( -1672, 1816 )
+
+[node name="Yurta19" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( -432, 2072 )
+
 [node name="Yurta6" parent="TileMap" instance=ExtResource( 8 )]
 position = Vector2( 957, 0 )
+
+[node name="Yurta22" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 1176, 2520 )
+
+[node name="Yurta13" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 2776, 600 )
+
+[node name="Yurta17" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 2616, 1256 )
 
 [node name="Yurta3" parent="TileMap" instance=ExtResource( 8 )]
 position = Vector2( -232, 0 )
@@ -422,6 +450,9 @@ position = Vector2( 496, -296 )
 [node name="ROCK24" parent="TileMap" instance=ExtResource( 12 )]
 position = Vector2( 1520, 824 )
 
+[node name="ROCK35" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 1112, 1592 )
+
 [node name="ROCK30" parent="TileMap" instance=ExtResource( 12 )]
 position = Vector2( 720, 64 )
 
@@ -440,11 +471,35 @@ position = Vector2( 1277, 669 )
 [node name="ROCK32" parent="TileMap" instance=ExtResource( 13 )]
 position = Vector2( -256, 345 )
 
-[node name="ROCK35" parent="TileMap" instance=ExtResource( 14 )]
-position = Vector2( 1576, -520 )
+[node name="Yurta7" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( -744, 496 )
 
-[node name="ROCK36" parent="TileMap" instance=ExtResource( 14 )]
-position = Vector2( -720, 264 )
+[node name="Yurta20" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( 1592, 2064 )
+
+[node name="Yurta8" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( 1744, -384 )
+
+[node name="Yurta23" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( -816, 1592 )
+
+[node name="Yurta9" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( 2056, 940 )
+
+[node name="Yurta10" parent="TileMap" instance=ExtResource( 15 )]
+position = Vector2( -112, 1448 )
+
+[node name="Yurta11" parent="TileMap" instance=ExtResource( 15 )]
+position = Vector2( 2432, -8 )
+
+[node name="Yurta12" parent="TileMap" instance=ExtResource( 15 )]
+position = Vector2( 1764, 1544 )
+
+[node name="Yurta18" parent="TileMap" instance=ExtResource( 15 )]
+position = Vector2( 1128, -752 )
+
+[node name="Yurta15" parent="TileMap" instance=ExtResource( 15 )]
+position = Vector2( -848, -468 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
