@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://ASAN.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://ROCK36.tscn" type="PackedScene" id=21]
 [ext_resource path="res://ROCK37.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Transitions2.gd" type="Script" id=23]
+[ext_resource path="res://mainmenu.mp3" type="AudioStream" id=24]
 [ext_resource path="res://Sprites/Concepts/Sungods-export.png" type="Texture" id=25]
 [ext_resource path="res://CUTSCENE.gd" type="Script" id=26]
 [ext_resource path="res://Sprites/Concepts/derevo.png" type="Texture" id=27]
@@ -841,7 +842,6 @@ position = Vector2( 0, 4810 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Intro" type="ColorRect" parent="GUI"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 9 )
 anchor_right = 0.99975
@@ -891,7 +891,7 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="GUI/GameMenu"]
-anchor_left = 0.73125
+anchor_left = 0.647656
 anchor_top = 0.0222222
 anchor_right = 0.96825
 anchor_bottom = 0.132889
@@ -1054,7 +1054,6 @@ __meta__ = {
 }
 
 [node name="BattleAnim" type="ColorRect" parent="GUI" groups=["BATTLEANIM"]]
-visible = false
 material = SubResource( 23 )
 anchor_right = 0.99975
 anchor_bottom = 1.00044
@@ -1244,6 +1243,11 @@ position = Vector2( 2064, 320 )
 
 [node name="4" type="Position2D" parent="."]
 position = Vector2( 6896, 4168 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+autoplay = true
+bus = "New Bus"
 
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="GUI/GameMenu/Button2" to="GUI/GameMenu" method="_on_Button2_pressed"]
