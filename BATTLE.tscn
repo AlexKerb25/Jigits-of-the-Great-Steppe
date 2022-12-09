@@ -262,7 +262,7 @@ tile_data = PoolIntArray( -131079, 0, 1, -131078, 0, 2, -131077, 0, 0, -131076, 
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -13.109
+volume_db = -60.816
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 2
