@@ -48,7 +48,12 @@ var potential_members = {"ALI":{"Name":"ALI",
 
 var enemy_layouts = {"1":[{"hp":110,"maxhp":110,"attackpower":10,"cd":5,"counterpercent":0.15,"type":"dzungar1","atype":"MELEE", "xpvalue":25},
 {"hp":100,"maxhp":100,"attackpower":20,"cd":6,"counterpercent":0.1,"type":"dzungar2","atype":"MELEE", "xpvalue":30},
+{"hp":110,"maxhp":110,"attackpower":10,"cd":5,"counterpercent":0.15,"type":"dzungar1","atype":"MELEE", "xpvalue":25}],
+"2":[{"hp":120,"maxhp":120,"attackpower":5,"cd":2,"counterpercent":0.25,"type":"dzungar3","atype":"MELEE", "xpvalue":30},
+{"hp":100,"maxhp":100,"attackpower":20,"cd":6,"counterpercent":0.1,"type":"dzungar2","atype":"MELEE", "xpvalue":30},
 {"hp":110,"maxhp":110,"attackpower":10,"cd":5,"counterpercent":0.15,"type":"dzungar1","atype":"MELEE", "xpvalue":25}]}
+
+var events = []
 
 var enemy_id
 var layout 

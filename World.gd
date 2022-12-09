@@ -5,12 +5,14 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var data
-
+var event1 = false
+var event2 = false
+var ds = preload("res://Dialogue_Screen.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Save.data != null:
 		data = Save.data
-		print(data)
+
 		loading()
 	else:
 		Save.savegame()
@@ -39,6 +41,7 @@ func saving():
 func loading():
 	for x in $TileMap.get_children():
 		x.queue_free()
+
 	for x in data:
 		var i = load(x["filename"]).instance()
 		i.position = Vector2(x["position.x"],x["position.y"])
@@ -48,8 +51,22 @@ func loading():
 		$TileMap.add_child(i)
 			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	if event1 == false and Data.events.has("INVASION") == false:
+		if Data.party.size() == 4:
+			event1 = true
+			$GUI/Transitions1.fade()
+	if event2 == false and Data.events.has("D1") == false:
+		if get_tree().get_nodes_in_group("Enemy").size() == 0:
+			event2 = true
+			Data.events.append("D1")
+			var d = ds.instance()
+			d.speaker1 = "ASAN"
+			d.speaker2 = "ASAN"
+			d.dialogue = "ASAN1"
+			get_node("GUI").add_child(d)
+			Save.savegame()
+	pass
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):

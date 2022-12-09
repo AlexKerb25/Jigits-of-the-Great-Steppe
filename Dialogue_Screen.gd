@@ -72,6 +72,22 @@ onready var dialogues = {"ALI1":
 			]
 		}
 
+		},
+
+"ASAN1":
+	{"1":
+		{"Text":tr("TRASAND1_1"), 
+		"Answers":[
+			[tr("..."),["GOTO_2"]],
+			]
+		},
+	"2":
+		{"Text":tr("TRASAND1_2"), 
+		"Answers":[
+			[tr("TRASAND1_2A1"),["END"]]
+			]
+		}
+
 		}
 		
 		

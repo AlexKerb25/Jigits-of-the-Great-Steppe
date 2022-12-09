@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://ASAN.tscn" type="PackedScene" id=2]
@@ -14,7 +14,10 @@
 [ext_resource path="res://telezhka.tscn" type="PackedScene" id=12]
 [ext_resource path="res://bonefire.tscn" type="PackedScene" id=13]
 [ext_resource path="res://anotheryurta.tscn" type="PackedScene" id=14]
-[ext_resource path="res://anotheryurta2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Transitions1.gd" type="Script" id=15]
+[ext_resource path="res://border.tscn" type="PackedScene" id=16]
+[ext_resource path="res://borde2r.tscn" type="PackedScene" id=17]
+[ext_resource path="res://anotheryurta2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
 [ext_resource path="res://GameMenu.gd" type="Script" id=40]
@@ -322,7 +325,7 @@ character = "ZULAR"
 dialogue = "ZULAR1"
 
 [node name="Enemy" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 450, -40 )
+position = Vector2( -568, -2744 )
 
 [node name="Yurta" parent="TileMap" instance=ExtResource( 10 )]
 
@@ -576,20 +579,43 @@ position = Vector2( -816, 1592 )
 [node name="Yurta9" parent="TileMap" instance=ExtResource( 14 )]
 position = Vector2( 2056, 940 )
 
-[node name="Yurta10" parent="TileMap" instance=ExtResource( 15 )]
+[node name="Yurta10" parent="TileMap" instance=ExtResource( 18 )]
 position = Vector2( -112, 1448 )
 
-[node name="Yurta11" parent="TileMap" instance=ExtResource( 15 )]
+[node name="Yurta11" parent="TileMap" instance=ExtResource( 18 )]
 position = Vector2( 2432, -8 )
 
-[node name="Yurta12" parent="TileMap" instance=ExtResource( 15 )]
+[node name="Yurta12" parent="TileMap" instance=ExtResource( 18 )]
 position = Vector2( 1764, 1544 )
 
-[node name="Yurta18" parent="TileMap" instance=ExtResource( 15 )]
+[node name="Yurta18" parent="TileMap" instance=ExtResource( 18 )]
 position = Vector2( 1128, -752 )
 
-[node name="Yurta15" parent="TileMap" instance=ExtResource( 15 )]
+[node name="Yurta15" parent="TileMap" instance=ExtResource( 18 )]
 position = Vector2( -848, -468 )
+
+[node name="Enemy2" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( -280, -2744 )
+id = 2
+layout = "2"
+type = "dzungar3"
+
+[node name="Enemy3" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 0, -2745 )
+id = 3
+type = "dzungar2"
+
+[node name="StaticBody2D2" parent="TileMap" instance=ExtResource( 16 )]
+position = Vector2( -6670, -2992 )
+
+[node name="StaticBody2D3" parent="TileMap" instance=ExtResource( 16 )]
+position = Vector2( 6662, -2992 )
+
+[node name="StaticBody2D4" parent="TileMap" instance=ExtResource( 17 )]
+position = Vector2( 0, -2896 )
+
+[node name="StaticBody2D5" parent="TileMap" instance=ExtResource( 17 )]
+position = Vector2( 0, 4810 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -823,7 +849,31 @@ __meta__ = {
 anims/1 = SubResource( 24 )
 anims/RESET = SubResource( 25 )
 
+[node name="Transitions1" type="ColorRect" parent="GUI"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 0.99975
+anchor_bottom = 1.00044
+margin_right = 0.319946
+margin_bottom = -0.320007
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Tween" type="Tween" parent="GUI/Transitions1"]
+
+[node name="1" type="Position2D" parent="."]
+position = Vector2( 464, -256 )
+
+[node name="2" type="Position2D" parent="."]
+position = Vector2( 544, 152 )
+
+[node name="3" type="Position2D" parent="."]
+position = Vector2( 2064, 320 )
+
 [connection signal="animation_finished" from="GUI/Intro/AnimationPlayer" to="GUI/Intro" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="GUI/GameMenu/Button2" to="GUI/GameMenu" method="_on_Button2_pressed"]
 [connection signal="pressed" from="GUI/GameMenu/Button3" to="GUI/GameMenu" method="_on_Button3_pressed"]
 [connection signal="animation_finished" from="GUI/BattleAnim/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="tween_completed" from="GUI/Transitions1/Tween" to="GUI/Transitions1" method="_on_Tween_tween_completed"]

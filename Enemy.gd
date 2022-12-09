@@ -13,6 +13,7 @@ var dzungaranimation = {'dzungar1': preload('res://Sprites/ANIMS/Dzungar1.tres')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	yield(get_tree(),"idle_frame")
 	$AnimatedSprite.texture = dzungaranimation[type]
 	if Data.enemy_id != null:
 		if Data.enemy_id == id:
@@ -38,6 +39,7 @@ func give_data():
 	return {"filename":filename,
 	"position.x":position.x,
 	"position.y":position.y,
+	"type":type,
 	"id":id,
 	"layout":"1",
 }

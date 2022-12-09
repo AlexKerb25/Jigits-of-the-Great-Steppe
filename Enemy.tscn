@@ -9,7 +9,7 @@ extents = Vector2( 24, 5 )
 [sub_resource type="CircleShape2D" id=7]
 radius = 120.266
 
-[node name="Enemy" type="KinematicBody2D" groups=["Saveobject"]]
+[node name="Enemy" type="KinematicBody2D" groups=["Enemy", "Saveobject"]]
 position = Vector2( 632, 296 )
 z_index = 1
 script = ExtResource( 1 )
