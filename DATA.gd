@@ -4,7 +4,7 @@ extends Node
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-var settings = {"fullscreen": false, "locale":"en"}
+var settings = {"fullscreen": false, "locale":"ru"}
 var party = [{"Name":"ASAN", 
 "Chars":{"Level":1,"EXP":0,
 "EXPtoLevel":50,"HP":100,"MaxHP":100,
