@@ -19,6 +19,11 @@ var anim_portraits = {"ALI":preload("res://Sprites/ANIMS/ALI.tres"),"ASAN":prelo
 "BERKEATA":preload("res://Sprites/ANIMS/BERKEATA.tres")}
 
 var hover = false
+
+var s = preload("res://Skill.tscn")
+var mp 
+
+var multip = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Line2D.set_as_toplevel(true)
@@ -27,22 +32,25 @@ func _ready():
 	$TextureRect.texture = portraits[member["Name"]]
 	$HPBAR.max_value = member["Chars"]["MaxHP"]
 	$HPBAR.value = member["Chars"]["HP"]
+	mp = member["Chars"]["Spirituality"]
 	$MPBAR.max_value = member["Chars"]["Spirituality"]
-	$MPBAR.value = member["Chars"]["Spirituality"]
+	$MPBAR.value = mp
 	$HP.text = str(member["Chars"]["HP"])
-	$MP.text = str(member["Chars"]["Spirituality"])
+	$MP.text = str(mp)
 	$Timer.wait_time = member["Weapon"][2]
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	member["Chars"]["HP"] = clamp(member["Chars"]["HP"],-10000,member["Chars"]["MaxHP"])
+	mp = clamp(mp, -1, member["Chars"]["Spirituality"])
 	$HPBAR.max_value = member["Chars"]["MaxHP"]
 	$HPBAR.value = member["Chars"]["HP"]
 	$MPBAR.max_value = member["Chars"]["Spirituality"]
-	$MPBAR.value = member["Chars"]["Spirituality"]
+	$MPBAR.value = mp
 	$HP.text = str(round(member["Chars"]["HP"]))
-	$MP.text = str(round(member["Chars"]["Spirituality"]))
+	$MP.text = str(round(mp))
 	if hover and get_parent().get_parent().get_parent().attackingcharacter == null and $Timer.is_stopped() == true:
 		self_modulate = Color(0.768627, 0.443137, 0.443137)
 	else:
@@ -63,6 +71,8 @@ func _process(delta):
 			$TextureRect.texture = portraits[member["Name"]]
 	if member["Chars"]["HP"] <= 0:
 		Data.party.erase(member)
+		if get_parent().get_parent().get_parent().attackingcharacter == member:
+			get_parent().get_parent().get_parent().attackingcharacter = null
 		queue_free()
 		
 		
@@ -84,6 +94,13 @@ func _on_PlayerCharacter4_gui_input(event):
 		if event.is_pressed() and event.button_index == 1 and get_parent().get_parent().get_parent().attackingcharacter == null and $Timer.is_stopped() == true:
 			get_parent().get_parent().get_parent().attackingcharacter = member
 			get_parent().get_parent().get_parent().enemyattack = true
+			for x in get_parent().get_parent().get_node("HBoxContainer3").get_children():
+				x.queue_free()
+			for x in member["Skills"]:
+				var ins = s.instance()
+				ins.skill = x
+				get_parent().get_parent().get_node("HBoxContainer3").add_child(ins)
+				
 			self_modulate = Color(1, 1, 1)
 			
 func gonacd(cd):
@@ -99,3 +116,8 @@ func drawline(to):
 	$Line2D.add_point(to.rect_global_position+Vector2(132,132))
 	$Line2D/Tween.interpolate_property($Line2D, "modulate:a",1,0,2)
 	$Line2D/Tween.start()
+
+
+func _on_Timer_timeout():
+	multip = 1
+	pass # Replace with function body.
