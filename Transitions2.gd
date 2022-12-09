@@ -33,6 +33,7 @@ func _on_Tween_tween_completed(object, key):
 		$Tween.start()
 		faded = true
 		Data.events.append("TRANS")
+		get_parent().get_parent().get_node("GUI/CUTSCENE").play()
 	else:
 		queue_free()
 	Save.savegame()

@@ -23,7 +23,6 @@
 [ext_resource path="res://ROCK36.tscn" type="PackedScene" id=21]
 [ext_resource path="res://ROCK37.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Transitions2.gd" type="Script" id=23]
-[ext_resource path="res://fonts/font1.tres" type="DynamicFont" id=24]
 [ext_resource path="res://Sprites/Concepts/Sungods-export.png" type="Texture" id=25]
 [ext_resource path="res://CUTSCENE.gd" type="Script" id=26]
 [ext_resource path="res://Sprites/Concepts/derevo.png" type="Texture" id=27]
@@ -300,6 +299,12 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.03 ]
 }
+
+[sub_resource type="DynamicFont" id=29]
+size = 30
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 43 )
 
 [sub_resource type="Animation" id=27]
 resource_name = "New Anim"
@@ -1121,7 +1126,7 @@ anchor_right = 0.95
 anchor_bottom = 0.180111
 margin_right = -6.10352e-05
 margin_bottom = -1.68001
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = SubResource( 29 )
 text = "TRSCENE1"
 align = 1
 valign = 1
@@ -1141,7 +1146,7 @@ anchor_right = 0.95
 anchor_bottom = 0.891222
 margin_right = -6.10352e-05
 margin_bottom = -1.68001
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = SubResource( 29 )
 text = "TRSCENE2"
 align = 1
 valign = 1
@@ -1157,7 +1162,7 @@ anchor_right = 0.95
 anchor_bottom = 0.180111
 margin_right = -6.10352e-05
 margin_bottom = -1.68001
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = SubResource( 29 )
 text = "TRSCENE3"
 align = 1
 valign = 1
@@ -1173,7 +1178,7 @@ anchor_right = 0.95
 anchor_bottom = 0.891222
 margin_right = -6.10352e-05
 margin_bottom = -1.68001
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = SubResource( 29 )
 text = "TRSCENE4"
 align = 1
 valign = 1
@@ -1189,7 +1194,7 @@ anchor_right = 0.95
 anchor_bottom = 0.180111
 margin_right = -6.10352e-05
 margin_bottom = -1.68001
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = SubResource( 29 )
 text = "TRSCENE5"
 align = 1
 valign = 1
@@ -1205,7 +1210,7 @@ anchor_right = 0.95
 anchor_bottom = 0.891222
 margin_right = -6.10352e-05
 margin_bottom = -1.68001
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = SubResource( 29 )
 text = "TRSCENE6"
 align = 1
 valign = 1
