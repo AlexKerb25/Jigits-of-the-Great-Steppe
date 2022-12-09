@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=28]
 extents = Vector2( 80, 41 )
 
-[node name="ROCK" type="StaticBody2D" groups=["Saveobject"]]
+[node name="ROCK2" type="StaticBody2D" groups=["Saveobject"]]
 position = Vector2( 1408, 64 )
 script = ExtResource( 2 )
 

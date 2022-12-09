@@ -15,6 +15,7 @@ func savegame():
 	f.open("user://save.jots",File.WRITE)
 	f.store_line(to_json(Data.settings))
 	f.store_line(to_json(Data.party))
+	f.store_line(to_json(Data.events))
 	if get_tree().get_nodes_in_group("WORLD").size() > 0:
 		f.open("user://wsave.jots",File.WRITE)
 		f.store_line(to_json(get_tree().get_nodes_in_group("WORLD")[0].saving()))
@@ -38,6 +39,7 @@ func loadgame():
 		return
 	Data.settings = parse_json(f.get_line())
 	Data.party = parse_json(f.get_line())
+	Data.events = parse_json(f.get_line())
 	if f2.open("user://wsave.jots",File.READ) != OK:
 		return
 	data = parse_json(f2.get_line())
