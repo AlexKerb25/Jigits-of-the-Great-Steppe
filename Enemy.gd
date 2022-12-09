@@ -7,11 +7,13 @@ extends KinematicBody2D
 export var id = 1
 export var layout = '1'
 
-export var type = "dzungar"
+export var type = "dzungar1"
+var dzungaranimation = {'dzungar1': preload('res://Sprites/ANIMS/Dzungar1.tres'), 'dzungar2': preload('res://Sprites/ANIMS/Dzungar2.tres'), 'dzungar3': preload('res://Sprites/ANIMS/Dzungar3.tres'), 'dzungar4': preload('res://Sprites/ANIMS/Dzungar4.tres')}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AnimatedSprite.texture = dzungaranimation[type]
 	if Data.enemy_id != null:
 		if Data.enemy_id == id:
 			queue_free()

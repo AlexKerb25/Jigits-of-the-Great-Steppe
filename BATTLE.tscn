@@ -214,7 +214,6 @@ __meta__ = {
 }
 
 [node name="Intro" type="ColorRect" parent="CanvasLayer"]
-visible = false
 modulate = Color( 0, 0, 0, 1 )
 material = SubResource( 23 )
 anchor_right = 0.99975
