@@ -1,13 +1,19 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://World.gd" type="Script" id=1]
 [ext_resource path="res://ASAN.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BattleAnim.gd" type="Script" id=3]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://World.tres" type="TileSet" id=5]
+[ext_resource path="res://ROCK3.tscn" type="PackedScene" id=6]
 [ext_resource path="res://ROCK.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Yurta2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://zabor.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Yurta.tscn" type="PackedScene" id=10]
+[ext_resource path="res://zabor2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://telezhka.tscn" type="PackedScene" id=12]
+[ext_resource path="res://bonefire.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Yurt4.tscn" type="PackedScene" id=14]
 [ext_resource path="res://NPC1.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Intro.gd" type="Script" id=39]
 [ext_resource path="res://GameMenu.gd" type="Script" id=40]
@@ -297,14 +303,15 @@ tile_data = PoolIntArray( -2883671, 0, 2, -2883670, 0, 2, -2883669, 0, 1, -28836
 [node name="ASAN" parent="TileMap" instance=ExtResource( 2 )]
 
 [node name="NPC1" parent="TileMap" instance=ExtResource( 38 )]
+position = Vector2( 64, 248 )
 character = "ALI"
 
 [node name="NPC2" parent="TileMap" instance=ExtResource( 38 )]
-position = Vector2( 1056, 360 )
+position = Vector2( 1000, 39 )
 dialogue = "BERKEATA1"
 
 [node name="NPC3" parent="TileMap" instance=ExtResource( 38 )]
-position = Vector2( 744, 560 )
+position = Vector2( 924, 704 )
 character = "DANA"
 dialogue = "DANA1"
 
@@ -314,13 +321,130 @@ character = "ZULAR"
 dialogue = "ZULAR1"
 
 [node name="Enemy" parent="TileMap" instance=ExtResource( 4 )]
-position = Vector2( 352, -16 )
+position = Vector2( 450, -40 )
 
 [node name="Yurta" parent="TileMap" instance=ExtResource( 10 )]
 
-[node name="ROCK" parent="TileMap" instance=ExtResource( 7 )]
+[node name="Yurta4" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 176, 704 )
+
+[node name="Yurta5" parent="TileMap" instance=ExtResource( 10 )]
+position = Vector2( 448, -384 )
+
+[node name="ROCK3" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 104, -216 )
+
+[node name="ROCK2" parent="TileMap" instance=ExtResource( 7 )]
+position = Vector2( 832, 925 )
 
 [node name="Yurta2" parent="TileMap" instance=ExtResource( 8 )]
+
+[node name="Yurta6" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( 957, 0 )
+
+[node name="Yurta3" parent="TileMap" instance=ExtResource( 8 )]
+position = Vector2( -232, 0 )
+
+[node name="ROCK4" parent="TileMap" instance=ExtResource( 6 )]
+
+[node name="ROCK23" parent="TileMap" instance=ExtResource( 6 )]
+position = Vector2( -32, 792 )
+
+[node name="ROCK" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 1576, 605 )
+
+[node name="ROCK12" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 744, 504 )
+
+[node name="ROCK27" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 216, -288 )
+
+[node name="ROCK10" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 1032, 508 )
+
+[node name="ROCK17" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 208, 805 )
+
+[node name="ROCK20" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 608, 832 )
+
+[node name="ROCK21" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 728, 848 )
+
+[node name="ROCK5" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 1712, 616 )
+
+[node name="ROCK6" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 1848, 600 )
+
+[node name="ROCK7" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 1480, 508 )
+
+[node name="ROCK8" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 1328, 500 )
+
+[node name="ROCK11" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 888, 500 )
+
+[node name="ROCK13" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 600, 512 )
+
+[node name="ROCK26" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 0, -196 )
+
+[node name="ROCK14" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 448, 520 )
+
+[node name="ROCK16" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 64, 800 )
+
+[node name="ROCK18" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 336, 796 )
+
+[node name="ROCK19" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 480, 810 )
+
+[node name="ROCK22" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 928, 944 )
+
+[node name="ROCK15" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 296, 536 )
+
+[node name="ROCK9" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 1176, 504 )
+
+[node name="ROCK28" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 344, -304 )
+
+[node name="ROCK29" parent="TileMap" instance=ExtResource( 11 )]
+position = Vector2( 496, -296 )
+
+[node name="ROCK24" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 1520, 824 )
+
+[node name="ROCK30" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( 720, 64 )
+
+[node name="ROCK25" parent="TileMap" instance=ExtResource( 12 )]
+position = Vector2( -408, 96 )
+
+[node name="ROCK31" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 376, 197 )
+
+[node name="ROCK33" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 1280, 248 )
+
+[node name="ROCK34" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( 1277, 669 )
+
+[node name="ROCK32" parent="TileMap" instance=ExtResource( 13 )]
+position = Vector2( -256, 345 )
+
+[node name="ROCK35" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( 1576, -520 )
+
+[node name="ROCK36" parent="TileMap" instance=ExtResource( 14 )]
+position = Vector2( -720, 264 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
