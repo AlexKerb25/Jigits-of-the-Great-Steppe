@@ -84,7 +84,19 @@ onready var dialogues = {"ALI1":
 	"2":
 		{"Text":tr("TRASAND1_2"), 
 		"Answers":[
-			[tr("TRASAND1_2A1"),["END"]]
+			[tr("TRASAND1_2A1"),["GOTO_3"]]
+			]
+		},
+	"3":
+		{"Text":tr("TRASAND1_3"), 
+		"Answers":[
+			[tr("TRASAND1_3A1"),["GOTO_4"]]
+			]
+		},
+	"4":
+		{"Text":tr("TRASAND1_4"), 
+		"Answers":[
+			[tr("TRASAND1_4A1"),["EVENT_D2", "END"]]
 			]
 		}
 
@@ -154,6 +166,9 @@ func effect(eff):
 					x.queue_free()
 		"END":
 			queue_free()
+		"EVENT":
+			Data.events.append(eff.split("_")[1])
+			Save.savegame()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
